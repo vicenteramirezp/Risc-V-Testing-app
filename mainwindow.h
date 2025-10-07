@@ -24,11 +24,16 @@ private slots:
     void connectSerialPort();
     void disconnectSerialPort();
     void handleSerialError(QSerialPort::SerialPortError error);
+    void sendData();
+    void readData();
+    void clearLog();
 
 private:
     Ui::MainWindow *ui;
     QSerialPort *serialPort;
+     QByteArray receiveBuffer;
     void updateStatus(const QString &message, bool isConnected = false);
+    void appendToLog(const QString &data, bool isSent = false);
 };
 
 #endif // MAINWINDOW_H

@@ -2,6 +2,8 @@
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QDateTime>
+#include <QScrollBar>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,12 +20,21 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->connectButton, &QPushButton::clicked, this, &MainWindow::connectSerialPort);
     connect(ui->disconnectButton, &QPushButton::clicked, this, &MainWindow::disconnectSerialPort);
     connect(serialPort, &QSerialPort::errorOccurred, this, &MainWindow::handleSerialError);
+    connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);
+
+    // New connections for log/send functionality
+    connect(ui->sendButton, &QPushButton::clicked, this, &MainWindow::sendData);
+    connect(ui->clearLogButton, &QPushButton::clicked, this, &MainWindow::clearLog);
+    connect(ui->sendLineEdit, &QLineEdit::returnPressed, this, &MainWindow::sendData);
 
     // Initial refresh of available ports
     refreshSerialPorts();
 
     // Set initial state
     updateStatus("Status: Disconnected", false);
+
+    // Configure log text edit
+   ui->sendLineEdit->setPlaceholderText("Enter 32-bit integer value...");
 }
 
 MainWindow::~MainWindow()
@@ -68,7 +79,7 @@ void MainWindow::connectSerialPort()
 
     serialPort->setPortName(selectedPort);
 
-    // Set common serial port settings (you can make these configurable)
+    // Set common serial port settings
     serialPort->setBaudRate(QSerialPort::Baud115200);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
@@ -81,6 +92,9 @@ void MainWindow::connectSerialPort()
         ui->disconnectButton->setEnabled(true);
         ui->refreshButton->setEnabled(false);
         ui->serialPortComboBox->setEnabled(false);
+
+        // Log connection
+        appendToLog(QString("Connected to %1").arg(selectedPort));
     } else {
         QMessageBox::critical(this, "Connection Error",
                               QString("Failed to connect to %1: %2").arg(selectedPort).arg(serialPort->errorString()));
@@ -91,6 +105,7 @@ void MainWindow::connectSerialPort()
 void MainWindow::disconnectSerialPort()
 {
     if (serialPort->isOpen()) {
+        appendToLog("Disconnected from serial port");
         serialPort->close();
     }
 
@@ -122,4 +137,139 @@ void MainWindow::updateStatus(const QString &message, bool isConnected)
         styleSheet = "margin-top: 10px; padding: 5px; background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24;";
     }
     ui->statusLabel->setStyleSheet(styleSheet);
+}
+
+void MainWindow::sendData()
+{
+    if (!serialPort || !serialPort->isOpen()) {
+        QMessageBox::warning(this, "Send Error", "Not connected to any serial port.");
+        return;
+    }
+
+    QString dataToSend = ui->sendLineEdit->text();
+    if (dataToSend.isEmpty()) {
+        return;
+    }
+
+    // Determine if we should send as 8-bit or 32-bit
+    bool ok;
+    quint64 value = dataToSend.toULongLong(&ok);
+    if (!ok) {
+        QMessageBox::warning(this, "Send Error", "Please enter a valid integer value");
+        return;
+    }
+
+    QByteArray data;
+    QString displayData;
+
+    // Auto-detect: if value fits in 8-bit, send as 8-bit, otherwise as 32-bit
+    if (value <= 0xFF) {
+        // Send as 8-bit
+        data.resize(1);
+        data[0] = value & 0xFF;
+        displayData = QString("8-bit: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
+    } else if (value <= 0xFFFFFFFF) {
+        // Send as 32-bit (little-endian)
+        data.resize(4);
+        data[0] = (value >> 0) & 0xFF;   // LSB
+        data[1] = (value >> 8) & 0xFF;
+        data[2] = (value >> 16) & 0xFF;
+        data[3] = (value >> 24) & 0xFF;  // MSB
+        displayData = QString("32-bit: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+    } else {
+        QMessageBox::warning(this, "Send Error", "Value too large (max 4294967295)");
+        return;
+    }
+
+    qint64 bytesWritten = serialPort->write(data);
+
+    if (bytesWritten == -1) {
+        QMessageBox::critical(this, "Send Error",
+                              QString("Failed to send data: %1").arg(serialPort->errorString()));
+    } else if (bytesWritten != data.size()) {
+        QMessageBox::warning(this, "Send Error",
+                             QString("Only sent %1 out of %2 bytes").arg(bytesWritten).arg(data.size()));
+    } else {
+        // Log sent data
+        appendToLog(displayData, true);
+
+        // Clear the input field after sending
+        ui->sendLineEdit->clear();
+    }
+}
+
+void MainWindow::readData()
+{
+    if (!serialPort || !serialPort->isOpen()) {
+        return;
+    }
+
+    // Accumulate received bytes
+    receiveBuffer += serialPort->readAll();
+
+    // Process data based on buffer content
+    while (!receiveBuffer.isEmpty()) {
+        // Check if we have at least 4 bytes for 32-bit data
+        if (receiveBuffer.size() >= 4) {
+            // Try to process as 32-bit data first
+            QByteArray chunk = receiveBuffer.left(4);
+
+            // Convert from little-endian bytes to 32-bit integer
+            quint32 value = (quint32)((unsigned char)chunk[0]) |
+                            ((quint32)((unsigned char)chunk[1]) << 8) |
+                            ((quint32)((unsigned char)chunk[2]) << 16) |
+                            ((quint32)((unsigned char)chunk[3]) << 24);
+
+            // Check if this might be valid 32-bit data
+            // You might want to adjust this logic based on your protocol
+            bool isLikely32Bit = true;
+
+            // Optional: Add validation logic here based on your protocol
+            // For example, check if the value is within expected ranges
+
+            if (isLikely32Bit) {
+                receiveBuffer.remove(0, 4);
+                QString receivedData = QString("32-bit: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+                appendToLog(receivedData, false);
+                continue; // Continue processing next chunk
+            }
+        }
+
+        // If we get here, process as 8-bit data
+        // Process single byte as 8-bit data
+        quint8 value = (quint8)receiveBuffer[0];
+        receiveBuffer.remove(0, 1);
+
+        QString receivedData = QString("8-bit: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
+        appendToLog(receivedData, false);
+
+        // Special handling for reset confirmation (8'b1 = 0x01)
+        if (value == 0x01) {
+            appendToLog("*** CPU Ready Confirmation recieved ***", false);
+        }
+    }
+}
+
+void MainWindow::appendToLog(const QString &data, bool isSent)
+{
+    QDateTime timestamp = QDateTime::currentDateTime();
+    QString timeStr = timestamp.toString("hh:mm:ss.zzz");
+
+    QString direction = isSent ? "SENT" : "RECV";
+    QString color = isSent ? "blue" : "green";
+
+    QString logEntry = QString("[%1] <span style='color:%2;'>%3:</span> %4")
+                           .arg(timeStr, color, direction, data.toHtmlEscaped());
+
+    QTextCursor cursor = ui->logTextEdit->textCursor();
+    cursor.movePosition(QTextCursor::End);
+    cursor.insertHtml(logEntry + "<br>");
+
+    QScrollBar *scrollBar = ui->logTextEdit->verticalScrollBar();
+    scrollBar->setValue(scrollBar->maximum());
+}
+
+void MainWindow::clearLog()
+{
+    ui->logTextEdit->clear();
 }

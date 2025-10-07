@@ -129,6 +129,60 @@
      </widget>
     </item>
     <item>
+     <widget class="QGroupBox" name="communicationGroupBox">
+      <property name="title">
+       <string>32-bit Communication Log</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTextEdit" name="logTextEdit">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="sendLayout">
+         <item>
+          <widget class="QLabel" name="sendLabel">
+           <property name="text">
+            <string>Send 32-bit:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="sendLineEdit">
+           <property name="placeholderText">
+            <string>Enter 32-bit integer (0-4294967295)...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="sendButton">
+           <property name="text">
+            <string>Send</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearLogButton">
+           <property name="text">
+            <string>Clear Log</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
