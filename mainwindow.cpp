@@ -199,10 +199,8 @@ void MainWindow::sendData()
                              QString("Only sent %1 out of 4 instruction bytes").arg(instructionBytesWritten));
     } else {
         // Log both protocol and instruction
-        QString displayProtocol = QString("8-bit: 0x03 - Instruction trigger");
         QString displayInstruction = QString("32-bit: %1 - %2").arg(riscvConverter.formatMachineCode(machineCode)).arg(instruction);
 
-        appendToLog(displayProtocol, true);
         appendToLog(displayInstruction, true);
 
         // Clear the input field after sending
