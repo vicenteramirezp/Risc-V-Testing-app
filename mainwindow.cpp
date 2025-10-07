@@ -4,11 +4,13 @@
 #include <QDebug>
 #include <QDateTime>
 #include <QScrollBar>
+#include <QThread>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , serialPort(nullptr)
+    , riscvConverter()  // Initialize the converter
 {
     ui->setupUi(this);
 
@@ -34,8 +36,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Set initial state
     updateStatus("Status: Disconnected", false);
 
-    // Configure log text edit
-   ui->sendLineEdit->setPlaceholderText("Enter 32-bit integer value...");
+    // Update placeholder text for RISC-V instructions
+    ui->sendLineEdit->setPlaceholderText("Enter RISC-V instruction (e.g., add x5, x6, x7)...");
 }
 
 MainWindow::~MainWindow()
@@ -147,59 +149,66 @@ void MainWindow::sendData()
         return;
     }
 
-    QString dataToSend = ui->sendLineEdit->text();
-    if (dataToSend.isEmpty()) {
+    QString instruction = ui->sendLineEdit->text().trimmed();
+    if (instruction.isEmpty()) {
         return;
     }
 
-    // Determine if we should send as 8-bit or 32-bit
-    bool ok;
-    quint64 value = dataToSend.toULongLong(&ok);
-    if (!ok) {
-        QMessageBox::warning(this, "Send Error", "Please enter a valid integer value");
+    // Convert RISC-V instruction to machine code using our private converter
+    quint32 machineCode;
+    QString errorMessage;
+
+    if (!riscvConverter.convertToMachineCode(instruction, machineCode, errorMessage)) {
+        QMessageBox::warning(this, "Instruction Error",
+                             QString("Invalid RISC-V instruction: %1").arg(errorMessage));
         return;
     }
 
-    QByteArray data;
-    QString displayData;
+    // Send protocol: first send byte 3 to trigger wait_for_inst state
+    QByteArray protocolByte;
+    protocolByte.resize(1);
+    protocolByte[0] = 0x03;  // Trigger wait_for_inst state
 
-    // Auto-detect: if value fits in 8-bit, send as 8-bit, otherwise as 32-bit
-    if (value <= 0xFF) {
-        // Send as 8-bit
-        data.resize(1);
-        data[0] = value & 0xFF;
-        displayData = QString("8-bit: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
-    } else if (value <= 0xFFFFFFFF) {
-        // Send as 32-bit (little-endian)
-        data.resize(4);
-        data[0] = (value >> 0) & 0xFF;   // LSB
-        data[1] = (value >> 8) & 0xFF;
-        data[2] = (value >> 16) & 0xFF;
-        data[3] = (value >> 24) & 0xFF;  // MSB
-        displayData = QString("32-bit: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
-    } else {
-        QMessageBox::warning(this, "Send Error", "Value too large (max 4294967295)");
-        return;
-    }
+    // Send instruction as 32-bit little-endian
+    QByteArray instructionData;
+    instructionData.resize(4);
+    instructionData[0] = (machineCode >> 0) & 0xFF;   // LSB
+    instructionData[1] = (machineCode >> 8) & 0xFF;
+    instructionData[2] = (machineCode >> 16) & 0xFF;
+    instructionData[3] = (machineCode >> 24) & 0xFF;  // MSB
 
-    qint64 bytesWritten = serialPort->write(data);
-
-    if (bytesWritten == -1) {
+    // Send protocol byte first
+    qint64 protocolBytesWritten = serialPort->write(protocolByte);
+    if (protocolBytesWritten == -1) {
         QMessageBox::critical(this, "Send Error",
-                              QString("Failed to send data: %1").arg(serialPort->errorString()));
-    } else if (bytesWritten != data.size()) {
+                              QString("Failed to send protocol byte: %1").arg(serialPort->errorString()));
+        return;
+    }
+
+    // Small delay to ensure protocol byte is processed
+    QThread::msleep(10);
+
+    // Send instruction data
+    qint64 instructionBytesWritten = serialPort->write(instructionData);
+
+    if (instructionBytesWritten == -1) {
+        QMessageBox::critical(this, "Send Error",
+                              QString("Failed to send instruction: %1").arg(serialPort->errorString()));
+    } else if (instructionBytesWritten != 4) {
         QMessageBox::warning(this, "Send Error",
-                             QString("Only sent %1 out of %2 bytes").arg(bytesWritten).arg(data.size()));
+                             QString("Only sent %1 out of 4 instruction bytes").arg(instructionBytesWritten));
     } else {
-        // Log sent data
-        appendToLog(displayData, true);
+        // Log both protocol and instruction
+        QString displayProtocol = QString("8-bit: 0x03 - Instruction trigger");
+        QString displayInstruction = QString("32-bit: %1 - %2").arg(riscvConverter.formatMachineCode(machineCode)).arg(instruction);
+
+        appendToLog(displayProtocol, true);
+        appendToLog(displayInstruction, true);
 
         // Clear the input field after sending
         ui->sendLineEdit->clear();
     }
 }
-
-
 
 void MainWindow::getPC()
 {
@@ -227,12 +236,8 @@ void MainWindow::getPC()
     } else {
         // Log sent data
         appendToLog(displayData, true);
-
-        // Don't clear the send line edit since this is a special command
-        // ui->sendLineEdit->clear(); // Remove this line
     }
 }
-
 
 void MainWindow::readData()
 {
@@ -281,7 +286,7 @@ void MainWindow::readData()
 
         // Special handling for reset confirmation (8'b1 = 0x01)
         if (value == 0x01) {
-            appendToLog("*** CPU Ready Confirmation recieved ***", false);
+            appendToLog("*** CPU Ready Confirmation received ***", false);
         }
     }
 }

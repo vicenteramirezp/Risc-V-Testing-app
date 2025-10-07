@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QSerialPortInfo>
+#include "riscvmachinecodeconverter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,15 +25,17 @@ private slots:
     void connectSerialPort();
     void disconnectSerialPort();
     void handleSerialError(QSerialPort::SerialPortError error);
-    void getPC();
     void sendData();
     void readData();
     void clearLog();
+    void getPC();
 
 private:
     Ui::MainWindow *ui;
     QSerialPort *serialPort;
-     QByteArray receiveBuffer;
+    QByteArray receiveBuffer;
+    RiscVMachineCodeConverter riscvConverter;  // Private converter instance
+
     void updateStatus(const QString &message, bool isConnected = false);
     void appendToLog(const QString &data, bool isSent = false);
 };

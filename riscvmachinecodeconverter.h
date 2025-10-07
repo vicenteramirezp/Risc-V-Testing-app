@@ -18,20 +18,22 @@ public:
 private:
     void initializeMaps();
     bool parseRTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
-    bool parseITypeInstruction(const QString& instruction, quint32& machineCode, QString& errorMessage);
-    bool parseSTypeInstruction(const QString& instruction, quint32& machineCode, QString& errorMessage);
-    bool parseBTypeInstruction(const QString& instruction, quint32& machineCode, QString& errorMessage);
-    bool parseUTypeInstruction(const QString& instruction, quint32& machineCode, QString& errorMessage);
-    bool parseJTypeInstruction(const QString& instruction, quint32& machineCode, QString& errorMessage);
+    bool parseITypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
+    bool parseSTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
+    bool parseBTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
+    bool parseUTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
+    bool parseJTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage);
 
     // Helper functions
     bool parseRegister(const QString& regStr, int& regNum, QString& errorMessage);
     bool parseImmediate(const QString& immStr, int& immValue, QString& errorMessage);
+    bool parseOffset(const QString& offsetStr, int& offsetValue, QString& errorMessage);
 
     QMap<QString, int> registerMap;
     QMap<QString, quint32> opcodeMap;
     QMap<QString, quint32> funct3Map;
     QMap<QString, quint32> funct7Map;
+    QMap<QString, quint32> funct12Map; // For SYSTEM instructions
 };
 
 #endif // RISCVMACHINECODECONVERTER_H
