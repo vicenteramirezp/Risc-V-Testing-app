@@ -24,6 +24,7 @@ private slots:
     void connectSerialPort();
     void disconnectSerialPort();
     void handleSerialError(QSerialPort::SerialPortError error);
+    void getPC();
     void sendData();
     void readData();
     void clearLog();

@@ -164,6 +164,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="getPC">
+           <property name="text">
+            <string>Get PC</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="sendButton">
            <property name="text">
             <string>Send</string>

@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::readData);
 
     // New connections for log/send functionality
+    connect(ui->getPC, &QPushButton::clicked, this, &MainWindow::getPC);
     connect(ui->sendButton, &QPushButton::clicked, this, &MainWindow::sendData);
     connect(ui->clearLogButton, &QPushButton::clicked, this, &MainWindow::clearLog);
     connect(ui->sendLineEdit, &QLineEdit::returnPressed, this, &MainWindow::sendData);
@@ -197,6 +198,41 @@ void MainWindow::sendData()
         ui->sendLineEdit->clear();
     }
 }
+
+
+
+void MainWindow::getPC()
+{
+    if (!serialPort || !serialPort->isOpen()) {
+        QMessageBox::warning(this, "Send Error", "Not connected to any serial port.");
+        return;
+    }
+
+    // According to README: Send byte 2 to request Program Counter
+    quint8 pcRequest = 2;
+    QByteArray data;
+    data.resize(1);
+    data[0] = pcRequest;
+
+    QString displayData = QString("8-bit: 0x%1 (%2) - PC Request").arg(pcRequest, 2, 16, QChar('0')).arg(pcRequest);
+
+    qint64 bytesWritten = serialPort->write(data);
+
+    if (bytesWritten == -1) {
+        QMessageBox::critical(this, "Send Error",
+                              QString("Failed to send data: %1").arg(serialPort->errorString()));
+    } else if (bytesWritten != data.size()) {
+        QMessageBox::warning(this, "Send Error",
+                             QString("Only sent %1 out of %2 bytes").arg(bytesWritten).arg(data.size()));
+    } else {
+        // Log sent data
+        appendToLog(displayData, true);
+
+        // Don't clear the send line edit since this is a special command
+        // ui->sendLineEdit->clear(); // Remove this line
+    }
+}
+
 
 void MainWindow::readData()
 {
