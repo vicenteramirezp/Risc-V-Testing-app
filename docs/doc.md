@@ -33,3 +33,9 @@ But to simplify it we'll divide it into the following sequences:
 (Image pending)
 ## Sending a Memory instruction
 (Image pending)
+
+- After getting the CPU-Ready confirmation bit, by sending a non 1 or 2 bit the controller awaits for an instruction in the Wait_inst state.
+- After sending an instruction the controller awaits for the processor to finish processing it.
+- Then it goes into goes into the Send_Adress state, where it sends the 32-bit calculated adress.
+- Afterwards depending if it was a write instruction, the controlles goes into the send_memwrite state, where it sends two bits, representing read_enable and write_enable respectevly, afterwards it sends the written data.
+- If it was a read instruction it will enter the send_sizeload stage,  where it will send the size of read thata, afterwards it will send the read data.
