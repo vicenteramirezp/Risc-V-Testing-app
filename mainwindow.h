@@ -36,6 +36,7 @@ private:
     QByteArray receiveBuffer;
     RiscVMachineCodeConverter riscvConverter;  // Private converter instance
 
+
     void updateStatus(const QString &message, bool isConnected = false);
     void appendToLog(const QString &data, bool isSent = false);
 };

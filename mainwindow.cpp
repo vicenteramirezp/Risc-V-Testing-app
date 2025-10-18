@@ -249,6 +249,42 @@ void MainWindow::readData()
     // Process data based on buffer content
     while (!receiveBuffer.isEmpty()) {
         // Check if we have at least 4 bytes for 32-bit data
+        if (receiveBuffer.size() >= 10) {
+            // Try to process as 32-bit data first
+            QByteArray chunk = receiveBuffer.left(4);
+
+            // Convert from little-endian bytes to 32-bit integer
+            quint32 Address = (quint32)((unsigned char)chunk[0]) |
+                            ((quint32)((unsigned char)chunk[1]) << 8) |
+                            ((quint32)((unsigned char)chunk[2]) << 16) |
+                            ((quint32)((unsigned char)chunk[3]) << 24);
+
+
+            receiveBuffer.remove(0, 4);
+            QString receivedData = QString("Address: 0x%1 (%2)").arg(Address, 8, 16, QChar('0')).arg(Address);
+            appendToLog(receivedData, false);
+
+
+            quint32 value = (quint8)receiveBuffer[0];
+            receiveBuffer.remove(0, 1);
+
+             receivedData = QString("Read/Write: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
+            appendToLog(receivedData, false);
+
+            chunk = receiveBuffer.left(4);
+
+            // Convert from little-endian bytes to 32-bit integer
+            value = (quint32)((unsigned char)chunk[0]) |
+                            ((quint32)((unsigned char)chunk[1]) << 8) |
+                            ((quint32)((unsigned char)chunk[2]) << 16) |
+                            ((quint32)((unsigned char)chunk[3]) << 24);
+
+
+            receiveBuffer.remove(0, 4);
+            receivedData = QString("Data Value: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+            appendToLog(receivedData, false);
+        }
+
         if (receiveBuffer.size() >= 4) {
             // Try to process as 32-bit data first
             QByteArray chunk = receiveBuffer.left(4);
@@ -268,7 +304,7 @@ void MainWindow::readData()
 
             if (isLikely32Bit) {
                 receiveBuffer.remove(0, 4);
-                QString receivedData = QString("32-bit: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+                QString receivedData = QString("Program counter: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
                 appendToLog(receivedData, false);
                 continue; // Continue processing next chunk
             }
