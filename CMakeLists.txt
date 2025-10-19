@@ -41,6 +41,9 @@ else()
         add_executable(Risc-V-Testing-app
             ${PROJECT_SOURCES}
             riscvmachinecodeconverter.h riscvmachinecodeconverter.cpp
+            assemblyloader.cpp
+            assemblyloader.h
+            assemblyloader.ui
         )
     endif()
 endif()

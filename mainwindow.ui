@@ -104,6 +104,19 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="openAssemblyLoaderButton">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Open Assembly Loader</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -159,7 +172,7 @@
          <item>
           <widget class="QLineEdit" name="sendLineEdit">
            <property name="placeholderText">
-            <string>Enter 32-bit integer (0-4294967295)...</string>
+            <string>Enter RISC-V instruction (e.g., add x5, x6, x7)...</string>
            </property>
           </widget>
          </item>

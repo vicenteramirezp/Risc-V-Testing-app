@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     , serialPort(nullptr)
     , riscvConverter()
     , csvStream(&csvFile)
+    , assemblyLoader(nullptr)  // Initialize pointer
 {
     ui->setupUi(this);
 
@@ -35,32 +36,53 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->clearLogButton, &QPushButton::clicked, this, &MainWindow::clearLog);
     connect(ui->sendLineEdit, &QLineEdit::returnPressed, this, &MainWindow::sendData);
 
+    // For now, let's add it programmatically or you can add it in Qt Designer
+    connect(ui->openAssemblyLoaderButton, &QPushButton::clicked, this, &MainWindow::openAssemblyLoader);
+
     // Initial refresh of available ports
     refreshSerialPorts();
 
     // Set initial state
     updateStatus("Status: Disconnected", false);
-
+    PC_counter=false;
     // Update placeholder text for RISC-V instructions
     ui->sendLineEdit->setPlaceholderText("Enter RISC-V instruction (e.g., add x5, x6, x7)...");
+}
+
+void MainWindow::openAssemblyLoader()
+{
+    if (!assemblyLoader) {
+        assemblyLoader = new AssemblyLoader(this);
+        connect(assemblyLoader, &AssemblyLoader::instructionSelected,
+                this, &MainWindow::handleInstructionFromLoader);
+    }
+
+    assemblyLoader->show();
+    assemblyLoader->raise();
+    assemblyLoader->activateWindow();
+}
+
+void MainWindow::handleInstructionFromLoader(const QString& instruction)
+{
+    // Set the instruction in the send line edit and send it
+    ui->sendLineEdit->setText(instruction);
+    sendData();
 }
 
 
 void MainWindow::initializeCsvFile()
 {
-    // Create filename
-    QString fileName = "memory_data.csv";
+    QString fileName = "memory_map.csv";
     QString filePath = QDir::current().filePath(fileName);
 
     csvFile.setFileName(filePath);
 
-    if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        // Write simple CSV header
-        csvStream << "Address,DataValue\n";
+    if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        csvStream << "DataValue\n";
         csvStream.flush();
 
-        appendToLog(QString("CSV file created: %1").arg(filePath));
-        qDebug() << "CSV file created:" << filePath;
+        appendToLog(QString("Memory map CSV created: %1").arg(filePath));
+        qDebug() << "Memory map CSV created:" << filePath;
     } else {
         QMessageBox::warning(this, "File Error",
                              QString("Failed to create CSV file: %1").arg(csvFile.errorString()));
@@ -68,17 +90,52 @@ void MainWindow::initializeCsvFile()
     }
 }
 
+
 void MainWindow::writeToCsv(quint32 address, quint32 dataValue)
 {
-    if (csvFile.isOpen()) {
-        csvStream << QString("0x%1").arg(address, 8, 16, QChar('0')) << ","
-                  << QString("0x%1").arg(dataValue, 8, 16, QChar('0')) << "\n";
+    if (!csvFile.isOpen()) {
+        qDebug() << "CSV file not open!";
+        return;
+    }
 
+    // Calculate target row (address / 4)
+    int targetRow = address / 4;
+
+    // Read current file content to find where we are
+    csvFile.close();
+
+    QVector<QString> lines;
+    if (csvFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&csvFile);
+        while (!in.atEnd()) {
+            lines.append(in.readLine());
+        }
+        csvFile.close();
+    }
+
+    // Ensure we have enough rows (including header)
+    while (lines.size() <= targetRow + 1) {  // +1 for header
+        if (lines.isEmpty()) {
+            lines.append("DataValue");  // Header
+        } else {
+            lines.append("0x00000000");  // Default value
+        }
+    }
+
+    // Update the specific row
+    lines[targetRow + 1] = QString("0x%1").arg(dataValue, 8, 16, QChar('0'));
+
+    // Write back
+    if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        for (const QString& line : lines) {
+            csvStream << line << "\n";
+        }
         csvStream.flush();
+
+        qDebug() << "Memory updated - Address:" << QString("0x%1").arg(address, 8, 16, QChar('0'))
+                 << "-> Row:" << (targetRow + 1) << "Data:" << lines[targetRow + 1];
     }
 }
-
-
 MainWindow::~MainWindow()
 {
     if (serialPort && serialPort->isOpen()) {
@@ -268,6 +325,7 @@ void MainWindow::getPC()
 
     QString displayData = QString("8-bit: 0x%1 (%2) - PC Request").arg(pcRequest, 2, 16, QChar('0')).arg(pcRequest);
 
+    PC_counter=true;
     qint64 bytesWritten = serialPort->write(data);
 
     if (bytesWritten == -1) {
@@ -293,7 +351,7 @@ void MainWindow::readData()
 
     // Process data based on buffer content
     while (!receiveBuffer.isEmpty()) {
-        // Check if we have at least 4 bytes for 32-bit data
+        // Sw instruction
         if (receiveBuffer.size() >= 10) {
             // Try to process as 32-bit data first
             QByteArray chunk = receiveBuffer.left(4);
@@ -332,59 +390,64 @@ void MainWindow::readData()
             // Write to CSV - address and data value only
             writeToCsv(Address, dataValue);
         }
-
-        if (receiveBuffer.size() >= 5) {
-            // Try to process as 32-bit data first
-            QByteArray chunk = receiveBuffer.left(4);
-
-            // Convert from little-endian bytes to 32-bit integer
-            quint32 value = (quint32)((unsigned char)chunk[0]) |
-                            ((quint32)((unsigned char)chunk[1]) << 8) |
-                            ((quint32)((unsigned char)chunk[2]) << 16) |
-                            ((quint32)((unsigned char)chunk[3]) << 24);
-
-            // Check if this might be valid 32-bit data
-            bool isLikely32Bit = true;
-
-            if (isLikely32Bit) {
-                receiveBuffer.remove(0, 4);
-                QString receivedData = QString("Address: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
-                appendToLog(receivedData, false);
-
-                continue; // Continue processing next chunk
-            }
-
-            // If we get here, process as 8-bit data
-             value = (quint8)receiveBuffer[0];
-            receiveBuffer.remove(0, 1);
-
-            QString receivedData = QString("Size: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
-            appendToLog(receivedData, false);
-
-
-        }
-
+        // lw instruction
         if (receiveBuffer.size() >= 4) {
-            // Try to process as 32-bit data first
-            QByteArray chunk = receiveBuffer.left(4);
+            if (PC_counter) { //Program counter Request
+                // Try to process as 32-bit data first
+                QByteArray chunk = receiveBuffer.left(4);
 
-            // Convert from little-endian bytes to 32-bit integer
-            quint32 value = (quint32)((unsigned char)chunk[0]) |
-                            ((quint32)((unsigned char)chunk[1]) << 8) |
-                            ((quint32)((unsigned char)chunk[2]) << 16) |
-                            ((quint32)((unsigned char)chunk[3]) << 24);
+                // Convert from little-endian bytes to 32-bit integer
+                quint32 value = (quint32)((unsigned char)chunk[0]) |
+                                ((quint32)((unsigned char)chunk[1]) << 8) |
+                                ((quint32)((unsigned char)chunk[2]) << 16) |
+                                ((quint32)((unsigned char)chunk[3]) << 24);
 
-            // Check if this might be valid 32-bit data
-            bool isLikely32Bit = true;
-
-            if (isLikely32Bit) {
                 receiveBuffer.remove(0, 4);
                 QString receivedData = QString("Program counter: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
                 appendToLog(receivedData, false);
-
+                PC_counter=false;
                 continue; // Continue processing next chunk
-            }
+            } else
+                {
+                QByteArray chunk = receiveBuffer.left(4);
+
+                // Convert from little-endian bytes to 32-bit integer
+                quint32 address = (quint32)((unsigned char)chunk[0]) |
+                                ((quint32)((unsigned char)chunk[1]) << 8) |
+                                ((quint32)((unsigned char)chunk[2]) << 16) |
+                                ((quint32)((unsigned char)chunk[3]) << 24);
+
+
+                receiveBuffer.remove(0, 4);
+                QString receivedData = QString("Address: 0x%1 (%2)").arg(address, 8, 16, QChar('0')).arg(address);
+                appendToLog(receivedData, false);
+
+                // Read value from CSV and send it back
+                quint32 dataValue = readFromCsv(address);
+
+                // Send the data value back through serial port
+                QByteArray responseData;
+                responseData.resize(4);
+                responseData[0] = (dataValue >> 0) & 0xFF;   // LSB
+                responseData[1] = (dataValue >> 8) & 0xFF;
+                responseData[2] = (dataValue >> 16) & 0xFF;
+                responseData[3] = (dataValue >> 24) & 0xFF;  // MSB
+
+                quint32  size = (quint8)receiveBuffer[0];
+                receiveBuffer.remove(0, 1);
+
+                receivedData = QString("Size: 0x%1 (%2)").arg(size, 2, 16, QChar('0')).arg(size);
+                appendToLog(receivedData, false);
+                serialPort->write(responseData);
+
+                QString responseLog = QString("Sent data value: 0x%1 for address: 0x%2")
+                                          .arg(dataValue, 8, 16, QChar('0'))
+                                          .arg(address, 8, 16, QChar('0'));
+                appendToLog(responseLog, true);
+                }
         }
+
+
 
         // If we get here, process as 8-bit data
         quint8 value = (quint8)receiveBuffer[0];
@@ -423,4 +486,51 @@ void MainWindow::appendToLog(const QString &data, bool isSent)
 void MainWindow::clearLog()
 {
     ui->logTextEdit->clear();
+}
+
+quint32 MainWindow::readFromCsv(quint32 address)
+{
+    if (!csvFile.isOpen()) {
+        qDebug() << "CSV file not open!";
+        return 0;
+    }
+
+    // Calculate target row (address / 4)
+    int targetRow = address / 4;
+
+    // Read current file content
+    csvFile.close();
+
+    quint32 dataValue = 0;
+
+    if (csvFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&csvFile);
+        int currentRow = 0;
+
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+
+            // Skip header row and check if we're at the target row
+            if (currentRow == targetRow + 1 && currentRow > 0) {
+                // Parse the hex value
+                bool ok;
+                dataValue = line.toUInt(&ok, 16);
+                if (!ok) {
+                    qDebug() << "Failed to parse CSV value:" << line;
+                    dataValue = 0;
+                }
+                break;
+            }
+            currentRow++;
+        }
+        csvFile.close();
+
+        // Reopen for writing if needed later
+        csvFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append);
+    }
+
+    qDebug() << "Read from CSV - Address:" << QString("0x%1").arg(address, 8, 16, QChar('0'))
+             << "-> Row:" << (targetRow + 1) << "Data:" << QString("0x%1").arg(dataValue, 8, 16, QChar('0'));
+
+    return dataValue;
 }

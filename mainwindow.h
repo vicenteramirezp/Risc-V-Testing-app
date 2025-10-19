@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "riscvmachinecodeconverter.h"
+#include "assemblyloader.h"  // Add this include
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,6 +32,9 @@ private slots:
     void readData();
     void clearLog();
     void getPC();
+    void openAssemblyLoader();  // Add this slot
+    void handleInstructionFromLoader(const QString& instruction);  // Add this slot
+    quint32 readFromCsv(quint32 address);  // Add this line
 
 private:
     Ui::MainWindow *ui;
@@ -39,7 +43,8 @@ private:
     RiscVMachineCodeConverter riscvConverter;
     QFile csvFile;
     QTextStream csvStream;
-
+    AssemblyLoader *assemblyLoader;  // Add this member
+    bool PC_counter;
     void updateStatus(const QString &message, bool isConnected = false);
     void appendToLog(const QString &data, bool isSent = false);
     void writeToCsv(quint32 address, quint32 dataValue); // Simplified method
