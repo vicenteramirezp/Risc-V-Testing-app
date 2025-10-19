@@ -211,35 +211,70 @@ bool RiscVMachineCodeConverter::parseITypeInstruction(const QStringList& parts, 
         return true;
     }
 
-    // Standard I-type: rd, rs1, imm
-    if (parts.size() != 4) {
-        errorMessage = QString("I-type instruction requires 3 operands (got %1)").arg(parts.size() - 1);
-        return false;
-    }
+    // Check if this is a LOAD instruction (lw, lh, lb, etc.)
+    bool isLoadInstruction = (opcode == 0x03); // Load instructions have opcode 0x03
 
-    int rd, rs1, imm;
-    if (!parseRegister(parts[1], rd, errorMessage)) return false;
-    if (!parseRegister(parts[2], rs1, errorMessage)) return false;
-    if (!parseImmediate(parts[3], imm, errorMessage)) return false;
-
-    // Handle shift instructions specially
-    if (mnemonic == "slli" || mnemonic == "srli" || mnemonic == "srai") {
-        if (imm < 0 || imm > 31) {
-            errorMessage = "Shift amount must be between 0 and 31";
+    if (isLoadInstruction) {
+        // LOAD instructions use format: rd, offset(rs1)
+        if (parts.size() != 3) {
+            errorMessage = QString("Load instruction requires 2 operands in format: rd, offset(rs1) (got %1)").arg(parts.size() - 1);
             return false;
         }
-        quint32 shamt = imm & 0x1F;
-        quint32 funct3 = funct3Map[mnemonic];
-        quint32 funct7 = funct7Map[mnemonic];
-        machineCode = (funct7 << 25) | (shamt << 20) | (rs1 << 15) | (funct3 << 12) | (rd << 7) | opcode;
-    } else {
-        // Standard I-type
-        quint32 imm12 = imm & 0xFFF;
+
+        int rd, rs1, offset;
+
+        // Parse destination register
+        if (!parseRegister(parts[1], rd, errorMessage)) return false;
+
+        // Parse offset(rs1) format
+        QString offsetRs1 = parts[2];
+        QRegularExpression offsetPattern(R"(([-+]?\d+)\((\w+)\))");
+        QRegularExpressionMatch match = offsetPattern.match(offsetRs1);
+
+        if (!match.hasMatch()) {
+            errorMessage = "Load instruction must be in format: offset(rs1)";
+            return false;
+        }
+
+        if (!parseImmediate(match.captured(1), offset, errorMessage)) return false;
+        if (!parseRegister(match.captured(2), rs1, errorMessage)) return false;
+
+        // Build machine code for LOAD instruction
+        quint32 imm12 = offset & 0xFFF;
         quint32 funct3 = funct3Map[mnemonic];
         machineCode = (imm12 << 20) | (rs1 << 15) | (funct3 << 12) | (rd << 7) | opcode;
+        return true;
     }
+    else {
+        // Standard I-type: rd, rs1, imm
+        if (parts.size() != 4) {
+            errorMessage = QString("I-type instruction requires 3 operands (got %1)").arg(parts.size() - 1);
+            return false;
+        }
 
-    return true;
+        int rd, rs1, imm;
+        if (!parseRegister(parts[1], rd, errorMessage)) return false;
+        if (!parseRegister(parts[2], rs1, errorMessage)) return false;
+        if (!parseImmediate(parts[3], imm, errorMessage)) return false;
+
+        // Handle shift instructions specially
+        if (mnemonic == "slli" || mnemonic == "srli" || mnemonic == "srai") {
+            if (imm < 0 || imm > 31) {
+                errorMessage = "Shift amount must be between 0 and 31";
+                return false;
+            }
+            quint32 shamt = imm & 0x1F;
+            quint32 funct3 = funct3Map[mnemonic];
+            quint32 funct7 = funct7Map[mnemonic];
+            machineCode = (funct7 << 25) | (shamt << 20) | (rs1 << 15) | (funct3 << 12) | (rd << 7) | opcode;
+        } else {
+            // Standard I-type
+            quint32 imm12 = imm & 0xFFF;
+            quint32 funct3 = funct3Map[mnemonic];
+            machineCode = (imm12 << 20) | (rs1 << 15) | (funct3 << 12) | (rd << 7) | opcode;
+        }
+        return true;
+    }
 }
 
 bool RiscVMachineCodeConverter::parseSTypeInstruction(const QStringList& parts, quint32& machineCode, QString& errorMessage)

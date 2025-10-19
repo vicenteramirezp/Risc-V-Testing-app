@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QSerialPortInfo>
+#include <QFile>
+#include <QTextStream>
 #include "riscvmachinecodeconverter.h"
 
 QT_BEGIN_NAMESPACE
@@ -34,11 +36,14 @@ private:
     Ui::MainWindow *ui;
     QSerialPort *serialPort;
     QByteArray receiveBuffer;
-    RiscVMachineCodeConverter riscvConverter;  // Private converter instance
-
+    RiscVMachineCodeConverter riscvConverter;
+    QFile csvFile;
+    QTextStream csvStream;
 
     void updateStatus(const QString &message, bool isConnected = false);
     void appendToLog(const QString &data, bool isSent = false);
+    void writeToCsv(quint32 address, quint32 dataValue); // Simplified method
+    void initializeCsvFile();
 };
 
 #endif // MAINWINDOW_H

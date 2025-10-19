@@ -5,14 +5,19 @@
 #include <QDateTime>
 #include <QScrollBar>
 #include <QThread>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , serialPort(nullptr)
-    , riscvConverter()  // Initialize the converter
+    , riscvConverter()
+    , csvStream(&csvFile)
 {
     ui->setupUi(this);
+
+    // Initialize CSV file
+    initializeCsvFile();
 
     // Initialize serial port
     serialPort = new QSerialPort(this);
@@ -40,11 +45,51 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sendLineEdit->setPlaceholderText("Enter RISC-V instruction (e.g., add x5, x6, x7)...");
 }
 
+
+void MainWindow::initializeCsvFile()
+{
+    // Create filename
+    QString fileName = "memory_data.csv";
+    QString filePath = QDir::current().filePath(fileName);
+
+    csvFile.setFileName(filePath);
+
+    if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        // Write simple CSV header
+        csvStream << "Address,DataValue\n";
+        csvStream.flush();
+
+        appendToLog(QString("CSV file created: %1").arg(filePath));
+        qDebug() << "CSV file created:" << filePath;
+    } else {
+        QMessageBox::warning(this, "File Error",
+                             QString("Failed to create CSV file: %1").arg(csvFile.errorString()));
+        qDebug() << "Failed to create CSV file:" << csvFile.errorString();
+    }
+}
+
+void MainWindow::writeToCsv(quint32 address, quint32 dataValue)
+{
+    if (csvFile.isOpen()) {
+        csvStream << QString("0x%1").arg(address, 8, 16, QChar('0')) << ","
+                  << QString("0x%1").arg(dataValue, 8, 16, QChar('0')) << "\n";
+
+        csvStream.flush();
+    }
+}
+
+
 MainWindow::~MainWindow()
 {
     if (serialPort && serialPort->isOpen()) {
         serialPort->close();
     }
+
+    // Close CSV file
+    if (csvFile.isOpen()) {
+        csvFile.close();
+    }
+
     delete ui;
 }
 
@@ -255,34 +300,68 @@ void MainWindow::readData()
 
             // Convert from little-endian bytes to 32-bit integer
             quint32 Address = (quint32)((unsigned char)chunk[0]) |
-                            ((quint32)((unsigned char)chunk[1]) << 8) |
-                            ((quint32)((unsigned char)chunk[2]) << 16) |
-                            ((quint32)((unsigned char)chunk[3]) << 24);
-
+                              ((quint32)((unsigned char)chunk[1]) << 8) |
+                              ((quint32)((unsigned char)chunk[2]) << 16) |
+                              ((quint32)((unsigned char)chunk[3]) << 24);
 
             receiveBuffer.remove(0, 4);
             QString receivedData = QString("Address: 0x%1 (%2)").arg(Address, 8, 16, QChar('0')).arg(Address);
             appendToLog(receivedData, false);
 
-
-            quint32 value = (quint8)receiveBuffer[0];
+            quint32 readWriteValue = (quint8)receiveBuffer[0];
             receiveBuffer.remove(0, 1);
+            if(readWriteValue==65){
+                appendToLog("Read/Write:Write", false);
+            } else {
+                appendToLog("Read/Write:Read", false);
+            }
 
-             receivedData = QString("Read/Write: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
-            appendToLog(receivedData, false);
 
             chunk = receiveBuffer.left(4);
 
             // Convert from little-endian bytes to 32-bit integer
-            value = (quint32)((unsigned char)chunk[0]) |
+            quint32 dataValue = (quint32)((unsigned char)chunk[0]) |
+                                ((quint32)((unsigned char)chunk[1]) << 8) |
+                                ((quint32)((unsigned char)chunk[2]) << 16) |
+                                ((quint32)((unsigned char)chunk[3]) << 24);
+
+            receiveBuffer.remove(0, 4);
+            receivedData = QString("Data Value: 0x%1 (%2)").arg(dataValue, 8, 16, QChar('0')).arg(dataValue);
+            appendToLog(receivedData, false);
+
+            // Write to CSV - address and data value only
+            writeToCsv(Address, dataValue);
+        }
+
+        if (receiveBuffer.size() >= 5) {
+            // Try to process as 32-bit data first
+            QByteArray chunk = receiveBuffer.left(4);
+
+            // Convert from little-endian bytes to 32-bit integer
+            quint32 value = (quint32)((unsigned char)chunk[0]) |
                             ((quint32)((unsigned char)chunk[1]) << 8) |
                             ((quint32)((unsigned char)chunk[2]) << 16) |
                             ((quint32)((unsigned char)chunk[3]) << 24);
 
+            // Check if this might be valid 32-bit data
+            bool isLikely32Bit = true;
 
-            receiveBuffer.remove(0, 4);
-            receivedData = QString("Data Value: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+            if (isLikely32Bit) {
+                receiveBuffer.remove(0, 4);
+                QString receivedData = QString("Address: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
+                appendToLog(receivedData, false);
+
+                continue; // Continue processing next chunk
+            }
+
+            // If we get here, process as 8-bit data
+             value = (quint8)receiveBuffer[0];
+            receiveBuffer.remove(0, 1);
+
+            QString receivedData = QString("Size: 0x%1 (%2)").arg(value, 2, 16, QChar('0')).arg(value);
             appendToLog(receivedData, false);
+
+
         }
 
         if (receiveBuffer.size() >= 4) {
@@ -296,22 +375,18 @@ void MainWindow::readData()
                             ((quint32)((unsigned char)chunk[3]) << 24);
 
             // Check if this might be valid 32-bit data
-            // You might want to adjust this logic based on your protocol
             bool isLikely32Bit = true;
-
-            // Optional: Add validation logic here based on your protocol
-            // For example, check if the value is within expected ranges
 
             if (isLikely32Bit) {
                 receiveBuffer.remove(0, 4);
                 QString receivedData = QString("Program counter: 0x%1 (%2)").arg(value, 8, 16, QChar('0')).arg(value);
                 appendToLog(receivedData, false);
+
                 continue; // Continue processing next chunk
             }
         }
 
         // If we get here, process as 8-bit data
-        // Process single byte as 8-bit data
         quint8 value = (quint8)receiveBuffer[0];
         receiveBuffer.remove(0, 1);
 
@@ -321,6 +396,7 @@ void MainWindow::readData()
         // Special handling for reset confirmation (8'b1 = 0x01)
         if (value == 0x01) {
             appendToLog("*** CPU Ready Confirmation received ***", false);
+
         }
     }
 }
