@@ -1,0 +1,2731 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="communication_FSM_0.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.57358448"
+     inkscape:cx="3989.822"
+     inkscape:cy="2406.7945"
+     inkscape:window-width="1920"
+     inkscape:window-height="1132"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       text-anchor="middle"
+       x="167.65643"
+       y="-30.985706"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text859"
+       style="stroke-width:0.352778" />
+    <text
+       text-anchor="middle"
+       x="153.54532"
+       y="-2.0579286"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text966"
+       style="stroke-width:0.352778" />
+    <text
+       text-anchor="middle"
+       x="120.38421"
+       y="93.19207"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text984"
+       style="stroke-width:0.352778" />
+    <text
+       text-anchor="middle"
+       x="179.2981"
+       y="122.11985"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text1047"
+       style="stroke-width:0.352778" />
+    <text
+       text-anchor="middle"
+       x="195.52588"
+       y="266.75873"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text1193"
+       style="stroke-width:0.352778" />
+    <text
+       text-anchor="middle"
+       x="237.50644"
+       y="151.04762"
+       font-family="Helvetica, sans-Serif"
+       font-size="3.52778px"
+       fill="#000000"
+       id="text1202"
+       style="stroke-width:0.352778" />
+    <g
+       id="g20081"
+       inkscape:export-filename="/home/vicente/Proyectosqt/Risc-V-Testing-app/docs/img/CommFSM.png"
+       inkscape:export-xdpi="97"
+       inkscape:export-ydpi="97">
+      <polygon
+         fill="#ffffff"
+         stroke="transparent"
+         points="582,-1028 582,4 -4,4 -4,-1028 "
+         id="polygon826"
+         transform="matrix(0.54018284,0,0,0.25337225,81.420725,203.82404)"
+         style="stroke-width:0.953567" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="389,-978 333,-978 333,-942 389,-942 "
+         id="polygon837"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="219.87593"
+         y="-45.167377"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text839"
+         style="stroke-width:0.352778">IDLE</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 219.05358,-40.510707 c 0,0 11.05372,0 11.05372,0 1.99905,0 3.99814,-1.999085 3.99814,-3.998136 0,0 0,-3.998172 0,-3.998172 0,-1.99905 -1.99909,-3.998136 -3.99814,-3.998136 0,0 -11.05372,0 -11.05372,0 -1.99905,0 -3.99814,1.999086 -3.99814,3.998136 0,0 0,3.998172 0,3.998172 0,1.999051 1.99909,3.998136 3.99814,3.998136"
+         id="path841" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="408,-896 314,-896 314,-860 408,-860 "
+         id="polygon846"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="211.88022"
+         y="-16.239599"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text848"
+         style="stroke-width:0.352778">RESET_CPU</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 212.3508,-11.582929 c 0,0 24.45928,0 24.45928,0 1.99905,0 3.99814,-1.999085 3.99814,-3.998136 0,0 0,-3.998172 0,-3.998172 0,-1.99905 -1.99909,-3.998136 -3.99814,-3.998136 0,0 -24.45928,0 -24.45928,0 -1.99905,0 -3.99814,1.999086 -3.99814,3.998136 0,0 0,3.998172 0,3.998172 0,1.999051 1.99909,3.998136 3.99814,3.998136"
+         id="path850" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 224.58044,-40.087902 c 0,3.670264 0,8.353777 0,12.497047"
+         id="path855"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.5001,-906.1476 361,-896.1476 357.5001,-906.1476 "
+         id="polygon857"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="243.5,-696 338.5,-696 338.5,-732 243.5,-732 "
+         id="polygon864"
+         transform="matrix(0.35277778,0,0,0.35277778,114.83732,292.15874)" />
+      <text
+         text-anchor="start"
+         x="204.73688"
+         y="41.615955"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text866"
+         style="stroke-width:0.352778">CPU_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 205.08963,46.272627 c 0,0 24.81206,0 24.81206,0 1.99905,0 3.99813,-1.999086 3.99813,-3.998136 0,0 0,-3.998172 0,-3.998172 0,-1.99905 -1.99908,-3.998136 -3.99813,-3.998136 0,0 -24.81206,0 -24.81206,0 -1.99905,0 -3.99814,1.999086 -3.99814,3.998136 0,0 0,3.998172 0,3.998172 0,1.99905 1.99909,3.998136 3.99814,3.998136"
+         id="path868" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 234.34094,38.573358 c 4.3743,0.104599 7.67277,0.671971 7.67277,1.702047 0,0.724288 -1.63071,1.2198 -4.11953,1.486535"
+         id="path873"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="348.5201,-713.2744 348.944,-706.2872 338.7504,-709.1753 "
+         id="polygon875"
+         transform="matrix(0.35277778,0,0,0.35277778,114.83732,292.15874)" />
+      <text
+         text-anchor="start"
+         x="242.01372"
+         y="41.33374"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text877"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <text
+         text-anchor="start"
+         x="230.5144"
+         y="-4.3635287"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text886"
+         style="stroke-width:0.352778">recv_data == 32'd1   </text>
+      <text
+         text-anchor="start"
+         x="230.5144"
+         y="-0.13019617"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text888"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="322,-626 204,-626 204,-590 322,-590 "
+         id="polygon893"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="173.07318"
+         y="79.010399"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text895"
+         style="stroke-width:0.352778">SEND_PC_PREV</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 173.54524,83.667072 c 0,0 32.92595,0 32.92595,0 1.99905,0 3.99814,-1.999086 3.99814,-3.998136 0,0 0,-3.998172 0,-3.998172 0,-1.999051 -1.99909,-3.998136 -3.99814,-3.998136 0,0 -32.92595,0 -32.92595,0 -1.99905,0 -3.99813,1.999085 -3.99813,3.998136 0,0 0,3.998172 0,3.998172 0,1.99905 1.99908,3.998136 3.99813,3.998136"
+         id="path897" />
+      <text
+         text-anchor="start"
+         x="173.54945"
+         y="57.944382"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text906"
+         style="stroke-width:0.352778">recv_data == 32'd2   </text>
+      <text
+         text-anchor="start"
+         x="173.54945"
+         y="62.177715"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text908"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="436.5,-626 351.5,-626 351.5,-590 436.5,-590 "
+         id="polygon913"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="225.11009"
+         y="79.010399"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text915"
+         style="stroke-width:0.352778">WAIT_INST</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 225.57997,83.667072 c 0,0 21.28428,0 21.28428,0 1.99905,0 3.99814,-1.999086 3.99814,-3.998136 0,0 0,-3.998172 0,-3.998172 0,-1.999051 -1.99909,-3.998136 -3.99814,-3.998136 0,0 -21.28428,0 -21.28428,0 -1.99905,0 -3.99814,1.999085 -3.99814,3.998136 0,0 0,3.998172 0,3.998172 0,1.99905 1.99909,3.998136 3.99814,3.998136"
+         id="path917" />
+      <text
+         text-anchor="start"
+         x="235.86932"
+         y="55.797626"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text926"
+         style="stroke-width:0.352778">not (recv_data == 32'd1)   </text>
+      <text
+         text-anchor="start"
+         x="235.86932"
+         y="60.03096"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text928"
+         style="stroke-width:0.352778">not (recv_data == 32'd2)   </text>
+      <text
+         text-anchor="start"
+         x="235.86932"
+         y="64.264297"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text930"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="322.5,-814 219.5,-814 219.5,-778 322.5,-778 "
+         id="polygon935"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="185.09145"
+         y="12.688178"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text937"
+         style="stroke-width:0.352778">SEND_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 185.44468,17.344849 c 0,0 27.63428,0 27.63428,0 1.99905,0 3.99814,-1.999085 3.99814,-3.998136 0,0 0,-3.9981717 0,-3.9981717 0,-1.9990506 -1.99909,-3.9981364 -3.99814,-3.9981364 0,0 -27.63428,0 -27.63428,0 -1.99905,0 -3.99814,1.9990858 -3.99814,3.9981364 0,0 0,3.9981717 0,3.9981717 0,1.999051 1.99909,3.998136 3.99814,3.998136"
+         id="path939" />
+      <text
+         text-anchor="start"
+         x="189.45566"
+         y="27.325813"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text948"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 185.6193,5.1504217 c 0.2485,-4.44602 1.36705,-7.75469 3.3556,-7.75469 1.39816,0 2.36622,1.63576 2.90423,4.15248"
+         id="path953"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="332.7191,-788.3392 322.5182,-791.2012 332.2774,-795.3252 "
+         id="polygon955"
+         transform="matrix(0,-0.35277778,0.35277778,0,471.22505,118.92768)" />
+      <text
+         text-anchor="start"
+         x="175.92163"
+         y="-4.711"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text957"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="220,-544 142,-544 142,-508 220,-508 "
+         id="polygon971"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="151.0849"
+         y="107.93818"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text973"
+         style="stroke-width:0.352778">SEND_PC</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 151.67302,112.59485 c 0,0 18.81484,0 18.81484,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -18.81484,0 -18.81484,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path975" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 183.58819,84.089876 c -3.96988,3.969879 -9.1252,9.125197 -13.5001,13.5001"
+         id="path980"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="208.6936,-548.7438 199.1476,-544.1476 203.7438,-553.6936 "
+         id="polygon982"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="138.29526"
+         y="73.960732"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text993"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 174.84382,104.87879 c 4.33564,0.0263 7.75606,0.59919 7.75606,1.71884 0,0.78726 -1.691,1.30422 -4.20218,1.55091"
+         id="path998"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="230.1683,-518.1037 220.0143,-521.1277 229.8379,-525.0958 "
+         id="polygon1000"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="182.59988"
+         y="107.65596"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1002"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 251.3205,75.956761 c 4.32266,0.0672 7.65577,0.63821 7.65577,1.713089 0,0.755756 -1.64786,1.26245 -4.12887,1.520013"
+         id="path1007"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="446.9749,-600.1959 436.7986,-603.144 446.5923,-607.1855 "
+         id="polygon1009"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="258.97629"
+         y="78.72818"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1011"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="433.5,-544 354.5,-544 354.5,-508 433.5,-508 "
+         id="polygon1016"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="226.17012"
+         y="107.93818"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1018"
+         style="stroke-width:0.352778">RUN_CPU</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 226.6383,112.59485 c 0,0 19.16762,0 19.16762,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99813 -3.99813,-3.99813 0,0 -19.16762,0 -19.16762,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path1020" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 236.22211,84.089876 c 0,3.670265 0,8.353778 0,12.497047"
+         id="path1025"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 229.61298,46.123366 c 0,6.480352 0,14.74973 0,22.065234"
+         id="path1025-9"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="394,-544.1476 390.5001,-554.1476 397.5001,-554.1476 "
+         id="polygon1027-2"
+         transform="matrix(0.35277778,0,0,0.35277778,90.574751,263.51474)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 205.08963,46.272627 c 0,6.480352 0,14.74973 0,22.065234"
+         id="path1025-9-5"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-2-9"
+         transform="matrix(0.35277778,0,0,0.35277778,66.051399,263.664)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 212.21656,-11.746052 c 0,3.9697907 0,9.0355191 0,13.516915"
+         id="path1025-9-0"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-2-2"
+         transform="matrix(0.35277778,0,0,0.35277778,73.178332,197.09701)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 210.99849,17.697627 c 0,3.969791 0,9.035519 0,13.516915"
+         id="path1025-9-0-3"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027-2-2-7"
+         transform="matrix(0.35277778,0,0,0.35277778,71.960267,226.54069)" />
+      <text
+         text-anchor="start"
+         x="236.22211"
+         y="93.19207"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1029"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="432.5,-462 355.5,-462 355.5,-426 432.5,-426 "
+         id="polygon1034"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <g
+         id="g9375"
+         transform="translate(57.414186)">
+        <text
+           text-anchor="start"
+           x="169.22372"
+           y="136.86595"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1036"
+           style="stroke-width:0.352778">CPU_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 169.57689,141.52263 c 0,0 18.46206,0 18.46206,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99814 -3.99813,-3.99814 0,0 -18.46206,0 -18.46206,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1038" />
+      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 236.22211,113.01765 c 0,3.67027 0,8.35378 0,12.49705"
+         id="path1043"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-472.1476 394,-462.1476 390.5001,-472.1476 "
+         id="polygon1045"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 286.52589,169.77085 c 0,3.67027 0,8.35378 0,12.49705"
+         id="path1043-3"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="394,-462.1476 390.5001,-472.1476 397.5001,-472.1476 "
+         id="polygon1045-5"
+         transform="matrix(0.35277778,0,0,0.35277778,147.53144,348.91194)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 115.5033,158.90408 c 0,-6.5202 0,-14.8404 0,-22.20088"
+         id="path1043-3-3"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 115.52033,120.81294 c 0,-33.09932 0,-75.336206 0,-112.7011384"
+         id="path1043-3-3-2"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 156.59667,100.43614 c 0,-25.449517 0,-57.924753 0,-86.654024"
+         id="path1043-3-3-2-1"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-472.1476 394,-462.1476 390.5001,-472.1476 "
+         id="polygon1045-5-6"
+         transform="matrix(0.35277778,0,0,-0.35277778,-23.491149,-29.94084)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 365.24337,186.38741 c 0,-12.12904 0,-27.60651 0,-41.29866"
+         id="path1043-3-9"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="394,-462.1476 390.5001,-472.1476 397.5001,-472.1476 "
+         id="polygon1045-5-1"
+         transform="matrix(0.35277778,0,0,-0.35277778,226.24892,-21.555284)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 229.35569,33.931306 c 0,-12.12904 0,-27.6065102 0,-41.2986602"
+         id="path1043-3-9-2"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-472.1476 397.5001,-472.1476 394,-462.1476 "
+         id="polygon1045-5-1-2"
+         transform="matrix(0.35277778,0,0,-0.35277778,90.361235,-174.01138)" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="337,-380 217,-380 217,-344 337,-344 "
+         id="polygon1052"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="177.66072"
+         y="165.79373"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1054"
+         style="stroke-width:0.352778">SEND_ADDRESS</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 178.13135,170.45041 c 0,0 33.63151,0 33.63151,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -33.63151,0 -33.63151,0 -1.99905,0 -3.99813,1.99909 -3.99813,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99908,3.99814 3.99813,3.99814"
+         id="path1056" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 227.06184,141.94543 c -5.87808,4.11967 -13.57764,9.51594 -19.96411,13.99194"
+         id="path1061"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="313.0913,-383.0208 302.8935,-380.1476 309.0738,-388.7531 "
+         id="polygon1063"
+         transform="matrix(0.35277778,0,0,0.35277778,97.227658,292.15874)" />
+      <text
+         text-anchor="start"
+         x="218.23044"
+         y="151.04762"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1065"
+         style="stroke-width:0.352778">write_enable || read_enable   </text>
+      <g
+         id="g3246"
+         transform="translate(154.27096,-144.63889)">
+        <polygon
+           fill="#ffffff"
+           fill-opacity="0.00392199"
+           stroke="transparent"
+           stroke-width="2"
+           points="423,-52 423,-16 547,-16 547,-52 "
+           id="polygon1070"
+           transform="matrix(0.35277778,0,0,0.35277778,39.813472,292.15874)" />
+        <text
+           text-anchor="start"
+           x="192.91754"
+           y="281.50485"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1072"
+           style="stroke-width:0.352778">RECV_DATA_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 193.38939,286.16152 c 0,0 35.04261,0 35.04261,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -35.04261,0 -35.04261,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1074" />
+      </g>
+      <g
+         id="g3089"
+         transform="translate(50.409389,0.41497093)">
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 127.53219,157.9678 c 0.42922,-4.49259 1.83795,-7.73692 4.22631,-7.73692 1.67932,0 2.87438,1.60394 3.58507,4.11798"
+           id="path1088"
+           style="stroke-width:0.352777" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="337.0686,-357.2824 346.8007,-361.4701 347.288,-354.487 "
+           id="polygon1090"
+           transform="matrix(0,-0.35277778,0.35277778,0,261.63738,276.87811)" />
+      </g>
+      <g
+         id="g3093"
+         transform="translate(-16.627185,-20.449743)">
+        <text
+           text-anchor="start"
+           x="166.46069"
+           y="163.39485"
+           font-family="Helvetica, sans-Serif"
+           font-size="3.52778px"
+           fill="#000000"
+           id="text1092"
+           style="stroke-width:0.352778">not (send_ready &amp;&amp; write_enable)   </text>
+        <text
+           text-anchor="start"
+           x="282.32605"
+           y="152.3723"
+           font-family="Helvetica, sans-Serif"
+           font-size="3.52778px"
+           fill="#000000"
+           id="text1092-2"
+           style="stroke-width:0.352778">not (read_enable || write_enable)   </text>
+        <text
+           text-anchor="start"
+           x="166.46069"
+           y="167.62819"
+           font-family="Helvetica, sans-Serif"
+           font-size="3.52778px"
+           fill="#000000"
+           id="text1094"
+           style="stroke-width:0.352778">not (send_ready &amp;&amp; read_enable)   </text>
+      </g>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="291.5,-298 291.5,-262 412.5,-262 412.5,-298 "
+         id="polygon1099"
+         transform="matrix(0.35277778,0,0,0.35277778,167.11085,262.56268)" />
+      <g
+         id="g6197"
+         transform="translate(39.893885)">
+        <text
+           text-anchor="start"
+           x="234.04788"
+           y="165.12547"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1101"
+           style="stroke-width:0.352778">SEND_SIZELOAD</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 234.40259,169.78212 c 0,0 33.98428,0 33.98428,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -33.98428,0 -33.98428,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99813 3.99814,3.99813"
+           id="path1103" />
+      </g>
+      <text
+         text-anchor="start"
+         x="217.53424"
+         y="171.47122"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1112"
+         style="stroke-width:0.352778">send_ready &amp;&amp; read_enable   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="168,-262 168,-298 40,-298 40,-262 "
+         id="polygon1117"
+         transform="matrix(0.35277778,0,0,0.35277778,78.67241,263.70696)" />
+      <g
+         id="g15188"
+         transform="translate(-18.555248,-28.451785)">
+        <text
+           text-anchor="start"
+           x="115.10425"
+           y="194.72151"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1119"
+           style="stroke-width:0.352778">SEND_MEMWRITE</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 115.68968,199.37818 c 0,0 36.45373,0 36.45373,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -36.45373,0 -36.45373,0 -1.99905,0 -3.99813,1.99909 -3.99813,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99908,3.99813 3.99813,3.99813"
+           id="path1121" />
+      </g>
+      <text
+         text-anchor="start"
+         x="140.50467"
+         y="176.09148"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1130"
+         style="stroke-width:0.352778">send_ready &amp;&amp; write_enable   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 312.73747,162.12558 c 4.45312,0.17466 7.65532,0.72778 7.65532,1.65932 0,0.655 -1.58313,1.12289 -4.07106,1.4037"
+         id="path1135"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="422.5256,-279.499 423.0236,-272.5167 412.7999,-275.2964 "
+         id="polygon1137"
+         transform="matrix(0.35277778,0,0,0.35277778,167.11085,262.56268)" />
+      <text
+         text-anchor="start"
+         x="320.39279"
+         y="164.84326"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1139"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="363,-216 233,-216 233,-180 363,-180 "
+         id="polygon1144"
+         transform="matrix(0.35277778,0,0,0.35277778,184.63115,262.56268)" />
+      <text
+         text-anchor="start"
+         x="270.59125"
+         y="194.05325"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1146"
+         style="stroke-width:0.352778">WAIT_RECV_DATA</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 271.17928,198.7099 c 0,0 37.15928,0 37.15928,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -37.15928,0 -37.15928,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.99909,3.99813 3.99814,3.99813"
+         id="path1148" />
+      <text
+         text-anchor="start"
+         x="288.70059"
+         y="179.30714"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1157"
+         style="stroke-width:0.352778">send_ready   </text>
+      <g
+         id="g17337"
+         transform="translate(0.3617989,-1.3677561)">
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 266.69008,196.6284 c -4.48493,-0.33762 -7.66981,-1.30657 -7.66981,-2.90704 0,-1.12528 1.57456,-1.93847 4.06848,-2.43943"
+           id="path1162"
+           style="stroke-width:0.352779" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="363.2588,-193.3419 372.9757,-197.5646 373.4882,-190.5834 "
+           id="polygon1164"
+           transform="matrix(-0.35277778,0,0,-0.35277778,394.83972,122.81087)" />
+      </g>
+      <text
+         text-anchor="start"
+         x="231.75085"
+         y="193.67715"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1166"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <g
+         id="g3251"
+         transform="translate(190.87169,-58.535955)">
+        <polygon
+           fill="#ffffff"
+           fill-opacity="0.00392199"
+           stroke="transparent"
+           stroke-width="2"
+           points="336,-98 430,-98 430,-134 336,-134 "
+           id="polygon1171"
+           transform="matrix(0.35277778,0,0,0.35277778,39.813472,292.15874)" />
+        <text
+           text-anchor="start"
+           x="162.26341"
+           y="252.57707"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1173"
+           style="stroke-width:0.352778">RECV_DATA</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 162.69772,257.23374 c 0,0 24.45928,0 24.45928,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -24.45928,0 -24.45928,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1175" />
+      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 312.60993,193.17748 c 9.79338,0.003 22.53882,0.007 33.29473,0.01"
+         id="path1180"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="359.4216,-143.6095 364.1885,-134.1476 354.5615,-138.5716 "
+         id="polygon1182"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,289.44136,316.41895)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 174.06279,164.77124 c -9.79338,0.003 -22.53882,0.007 -33.29473,0.01"
+         id="path1180-70"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="354.5615,-138.5716 359.4216,-143.6095 364.1885,-134.1476 "
+         id="polygon1182-9"
+         transform="matrix(-0.25401613,-0.2448019,-0.2448019,0.25401613,197.23136,288.01271)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 115.45528,8.2829734 c 18.3713,0.003 42.28034,0.007 62.45723,0.01"
+         id="path1180-70-0"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 156.4214,13.762334 c 6.32822,0.003 14.564,0.007 21.51416,0.01"
+         id="path1180-70-0-7"
+         style="stroke-width:0.352776" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="354.5615,-138.5716 359.4216,-143.6095 364.1885,-134.1476 "
+         id="polygon1182-9-6"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,121.53647,131.52445)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 365.53146,129.57804 c 0,-34.786268 0,-79.175803 0,-118.445081"
+         id="path1043-3-3-2-8"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 365.70809,11.304131 c -42.65477,0.003 -98.16712,0.007 -145.01413,0.01"
+         id="path1180-70-0-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-9-6-7"
+         transform="matrix(-0.25401613,-0.2448019,-0.2448019,0.25401613,277.07,134.54561)" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="359.4216,-143.6095 364.1885,-134.1476 354.5615,-138.5716 "
+         id="polygon1182-9-6-8"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,121.5004,137.05244)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 215.5083,164.7875 c 14.99732,0.003 34.51535,0.007 50.98667,0.01"
+         id="path1180-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="354.5615,-138.5716 359.4216,-143.6095 364.1885,-134.1476 "
+         id="polygon1182-5"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,210.28368,288.02897)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 249.52805,135.45326 c 26.70846,0.003 61.46777,0.007 90.80125,0.01"
+         id="path1180-7-6"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-5-2"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,283.65323,258.69473)" />
+      <text
+         text-anchor="start"
+         x="321.5972"
+         y="198.20248"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1184"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 109.85877,171.32806 c 0.37835,4.50283 1.49877,7.71374 3.36119,7.71374 1.30955,0 2.2522,-1.58743 2.82801,-4.09519"
+         id="path1207"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="178.3607,-272.5562 168.1343,-275.3261 177.856,-279.538 "
+         id="polygon1209"
+         transform="matrix(0,0.35277778,0.35277778,0,213.43846,112.01402)" />
+      <text
+         text-anchor="start"
+         x="99.120117"
+         y="184.32516"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1211"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="16,-180 110,-180 110,-216 16,-216 "
+         id="polygon1216"
+         transform="matrix(0.35277778,0,0,0.35277778,92.472648,196.60392)" />
+      <text
+         text-anchor="start"
+         x="101.99744"
+         y="128.09447"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1218"
+         style="stroke-width:0.352778">SEND_DATA</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 102.46801,132.75114 c 0,0 24.45928,0 24.45928,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -24.45928,0 -24.45928,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.99909,3.99813 3.99814,3.99813"
+         id="path1220" />
+      <text
+         text-anchor="start"
+         x="91.910545"
+         y="148.55009"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1238"
+         style="stroke-width:0.352778">send_ready   </text>
+      <text
+         text-anchor="start"
+         x="94.164833"
+         y="106.3592"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1238-6"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 131.30823,125.04923 c 4.39917,0.0974 7.73109,0.66565 7.73109,1.70469 0,0.73057 -1.64727,1.22837 -4.15453,1.49345"
+         id="path1243"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="119.8613,-197.2514 120.2741,-190.2636 110.0851,-193.1678 "
+         id="polygon1245"
+         transform="matrix(0.35277778,0,0,0.35277778,92.472648,196.60392)" />
+      <text
+         text-anchor="start"
+         x="140.31947"
+         y="127.81224"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1247"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+    </g>
+    <g
+       id="g24900"
+       inkscape:export-filename="/home/vicente/Proyectosqt/Risc-V-Testing-app/docs/img/PCSec.png"
+       inkscape:export-xdpi="97"
+       inkscape:export-ydpi="97">
+      <polygon
+         fill="#ffffff"
+         stroke="transparent"
+         points="-4,4 -4,-1028 582,-1028 582,4 "
+         id="polygon826-1"
+         transform="matrix(0.24343402,0,0,0.12830958,379.05509,641.77849)"
+         style="stroke-width:1.99609" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="338.5,-732 243.5,-732 243.5,-696 338.5,-696 "
+         id="polygon864-1"
+         transform="matrix(0.35277778,0,0,0.35277778,360.15121,813.33893)" />
+      <text
+         text-anchor="start"
+         x="450.05078"
+         y="562.79614"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text866-8"
+         style="stroke-width:0.352778">CPU_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 450.40352,567.45282 c 0,0 24.81206,0 24.81206,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99814 -3.99813,-3.99814 0,0 -24.81206,0 -24.81206,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path868-9" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 479.65483,559.75355 c 4.3743,0.1046 7.67277,0.67197 7.67277,1.70205 0,0.72428 -1.63071,1.21979 -4.11953,1.48653"
+         id="path873-6"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="348.944,-706.2872 338.7504,-709.1753 348.5201,-713.2744 "
+         id="polygon875-4"
+         transform="matrix(0.35277778,0,0,0.35277778,360.15121,813.33893)" />
+      <text
+         text-anchor="start"
+         x="487.32761"
+         y="562.51392"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text877-3"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="204,-590 322,-590 322,-626 204,-626 "
+         id="polygon893-8"
+         transform="matrix(0.35277778,0,0,0.35277778,342.54155,813.33893)" />
+      <text
+         text-anchor="start"
+         x="418.38708"
+         y="600.19061"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text895-6"
+         style="stroke-width:0.352778">SEND_PC_PREV</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 418.85913,604.84726 c 0,0 32.92595,0 32.92595,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -32.92595,0 -32.92595,0 -1.99905,0 -3.99813,1.99908 -3.99813,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.99908,3.99813 3.99813,3.99813"
+         id="path897-0" />
+      <text
+         text-anchor="start"
+         x="418.86334"
+         y="579.12457"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text906-4"
+         style="stroke-width:0.352778">recv_data == 32'd2   </text>
+      <text
+         text-anchor="start"
+         x="418.86334"
+         y="583.35791"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text908-8"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="219.5,-778 322.5,-778 322.5,-814 219.5,-814 "
+         id="polygon935-4"
+         transform="matrix(0.35277778,0,0,0.35277778,342.54155,813.33893)" />
+      <text
+         text-anchor="start"
+         x="430.40533"
+         y="533.86835"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text937-3"
+         style="stroke-width:0.352778">SEND_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 430.75857,538.52504 c 0,0 27.63428,0 27.63428,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -27.63428,0 -27.63428,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path939-0" />
+      <text
+         text-anchor="start"
+         x="434.76956"
+         y="548.50598"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text948-3"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 430.93319,526.33061 c 0.2485,-4.44602 1.36705,-7.75469 3.3556,-7.75469 1.39816,0 2.36622,1.63576 2.90423,4.15248"
+         id="path953-0"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="322.5182,-791.2012 332.2774,-795.3252 332.7191,-788.3392 "
+         id="polygon955-9"
+         transform="matrix(0,-0.35277778,0.35277778,0,716.53894,640.10787)" />
+      <text
+         text-anchor="start"
+         x="421.23553"
+         y="516.46918"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text957-25"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="142,-508 220,-508 220,-544 142,-544 "
+         id="polygon971-4"
+         transform="matrix(0.35277778,0,0,0.35277778,342.54155,813.33893)" />
+      <text
+         text-anchor="start"
+         x="396.3988"
+         y="629.11835"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text973-0"
+         style="stroke-width:0.352778">SEND_PC</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 396.98691,633.77504 c 0,0 18.81484,0 18.81484,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -18.81484,0 -18.81484,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path975-5" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 428.90208,605.27007 c -3.96988,3.96988 -9.1252,9.12519 -13.5001,13.5001"
+         id="path980-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="199.1476,-544.1476 203.7438,-553.6936 208.6936,-548.7438 "
+         id="polygon982-4"
+         transform="matrix(0.35277778,0,0,0.35277778,342.54155,813.33893)" />
+      <text
+         text-anchor="start"
+         x="383.60916"
+         y="595.14093"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text993-6"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 420.15771,626.05898 c 4.33564,0.0263 7.75606,0.59919 7.75606,1.71884 0,0.78726 -1.691,1.30422 -4.20218,1.55091"
+         id="path998-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="220.0143,-521.1277 229.8379,-525.0958 230.1683,-518.1037 "
+         id="polygon1000-2"
+         transform="matrix(0.35277778,0,0,0.35277778,342.54155,813.33893)" />
+      <text
+         text-anchor="start"
+         x="427.91379"
+         y="628.83612"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1002-2"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 450.40352,567.45282 c 0,6.48035 0,14.74973 0,22.06523"
+         id="path1025-9-5-6"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027-2-9-8"
+         transform="matrix(0.35277778,0,0,0.35277778,311.36529,784.84419)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 456.31238,538.87782 c 0,3.96979 0,9.03552 0,13.51691"
+         id="path1025-9-0-3-0"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="394,-544.1476 390.5001,-554.1476 397.5001,-554.1476 "
+         id="polygon1027-2-2-7-5"
+         transform="matrix(0.35277778,0,0,0.35277778,317.27416,747.72088)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 401.91056,621.61633 c 0,-25.44952 0,-57.92475 0,-86.65402"
+         id="path1043-3-3-2-1-2"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 401.73529,534.94252 c 6.32822,0.003 14.564,0.007 21.51416,0.01"
+         id="path1180-70-0-7-0"
+         style="stroke-width:0.352776" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-9-6-8-3"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,366.81429,658.23263)" />
+    </g>
+    <g
+       id="g20281"
+       inkscape:export-filename="/home/vicente/Proyectosqt/Risc-V-Testing-app/docs/img/ResetSec.png"
+       inkscape:export-xdpi="97"
+       inkscape:export-ydpi="97">
+      <polygon
+         fill="#ffffff"
+         stroke="transparent"
+         points="-4,-1028 582,-1028 582,4 -4,4 "
+         id="polygon826-6"
+         transform="matrix(0.22281347,0,0,0.11395618,186.7913,369.27908)"
+         style="stroke-width:2.21392" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="333,-978 333,-942 389,-942 389,-978 "
+         id="polygon837-2"
+         transform="matrix(0.35277778,0,0,0.35277778,122.75387,600.9335)" />
+      <text
+         text-anchor="start"
+         x="245.40215"
+         y="263.60739"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text839-9"
+         style="stroke-width:0.352778">IDLE</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 244.57979,268.26405 c 0,0 11.05372,0 11.05372,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99904 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -11.05372,0 -11.05372,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.99909,3.99813 3.99814,3.99813"
+         id="path841-3" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="314,-896 314,-860 408,-860 408,-896 "
+         id="polygon846-1"
+         transform="matrix(0.35277778,0,0,0.35277778,122.75387,600.9335)" />
+      <text
+         text-anchor="start"
+         x="237.40643"
+         y="292.53516"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text848-9"
+         style="stroke-width:0.352778">RESET_CPU</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 237.87701,297.19183 c 0,0 24.45928,0 24.45928,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -24.45928,0 -24.45928,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99906 1.99909,3.99814 3.99814,3.99814"
+         id="path850-4" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 250.10665,268.68686 c 0,3.67026 0,8.35377 0,12.49705"
+         id="path855-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.5001,-906.1476 361,-896.1476 357.5001,-906.1476 "
+         id="polygon857-8"
+         transform="matrix(0.35277778,0,0,0.35277778,122.75387,600.9335)" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="338.5,-696 338.5,-732 243.5,-732 243.5,-696 "
+         id="polygon864-4"
+         transform="matrix(0.35277778,0,0,0.35277778,140.36353,600.9335)" />
+      <text
+         text-anchor="start"
+         x="230.26309"
+         y="350.39072"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text866-5"
+         style="stroke-width:0.352778">CPU_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 230.61584,355.04739 c 0,0 24.81206,0 24.81206,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99814 -3.99813,-3.99814 0,0 -24.81206,0 -24.81206,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path868-0" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 259.86715,347.34812 c 4.3743,0.1046 7.67277,0.67197 7.67277,1.70204 0,0.72429 -1.63071,1.21981 -4.11953,1.48654"
+         id="path873-3"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="348.5201,-713.2744 348.944,-706.2872 338.7504,-709.1753 "
+         id="polygon875-6"
+         transform="matrix(0.35277778,0,0,0.35277778,140.36353,600.9335)" />
+      <text
+         text-anchor="start"
+         x="267.53992"
+         y="350.10849"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text877-1"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <text
+         text-anchor="start"
+         x="256.04062"
+         y="304.41122"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text886-0"
+         style="stroke-width:0.352778">recv_data == 32'd1   </text>
+      <text
+         text-anchor="start"
+         x="256.04062"
+         y="308.64456"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text888-6"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="219.5,-814 219.5,-778 322.5,-778 322.5,-814 "
+         id="polygon935-6"
+         transform="matrix(0.35277778,0,0,0.35277778,122.75387,600.9335)" />
+      <text
+         text-anchor="start"
+         x="210.61766"
+         y="321.46295"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text937-9"
+         style="stroke-width:0.352778">SEND_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 210.97089,326.11961 c 0,0 27.63428,0 27.63428,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -27.63428,0 -27.63428,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+         id="path939-3" />
+      <text
+         text-anchor="start"
+         x="214.98187"
+         y="336.10059"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text948-7"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 211.14551,313.92518 c 0.2485,-4.44602 1.36705,-7.75469 3.3556,-7.75469 1.39816,0 2.36622,1.63576 2.90423,4.15248"
+         id="path953-4"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="332.7191,-788.3392 322.5182,-791.2012 332.2774,-795.3252 "
+         id="polygon955-5"
+         transform="matrix(0,-0.35277778,0.35277778,0,496.75126,427.70244)" />
+      <text
+         text-anchor="start"
+         x="201.44785"
+         y="304.06375"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text957-2"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 237.74277,297.02871 c 0,3.96979 0,9.03552 0,13.51691"
+         id="path1025-9-0-9"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-2-2-2"
+         transform="matrix(0.35277778,0,0,0.35277778,98.704543,505.87177)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 236.5247,326.47239 c 0,3.96979 0,9.03552 0,13.51691"
+         id="path1025-9-0-3-6"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027-2-2-7-6"
+         transform="matrix(0.35277778,0,0,0.35277778,97.486478,535.31545)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 254.8819,342.70607 c 0,-12.12904 0,-27.60651 0,-41.29866"
+         id="path1043-3-9-2-6"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-472.1476 397.5001,-472.1476 394,-462.1476 "
+         id="polygon1045-5-1-2-1"
+         transform="matrix(0.35277778,0,0,-0.35277778,115.88745,134.76338)" />
+    </g>
+    <g
+       id="g26526"
+       inkscape:export-filename="/home/vicente/Proyectosqt/Risc-V-Testing-app/docs/img/NonMemInst.png"
+       inkscape:export-xdpi="97"
+       inkscape:export-ydpi="97">
+      <polygon
+         fill="#ffffff"
+         stroke="transparent"
+         points="582,-1028 582,4 -4,4 -4,-1028 "
+         id="polygon826-0"
+         transform="matrix(0.39461801,0,0,0.15777784,1061.4223,363.48126)"
+         style="stroke-width:1.41381" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="243.5,-696 338.5,-696 338.5,-732 243.5,-732 "
+         id="polygon864-0"
+         transform="matrix(0.35277778,0,0,0.35277778,1010.1202,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1100.0198"
+         y="254.81009"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text866-55"
+         style="stroke-width:0.352778">CPU_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1100.3725,259.46677 c 0,0 24.8121,0 24.8121,0 1.999,0 3.9981,-1.99909 3.9981,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99814 -3.9981,-3.99814 0,0 -24.8121,0 -24.8121,0 -1.9991,0 -3.9981,1.99909 -3.9981,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.999,3.99814 3.9981,3.99814"
+         id="path868-2" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1129.6238,251.7675 c 4.3743,0.1046 7.6728,0.67197 7.6728,1.70204 0,0.72429 -1.6307,1.2198 -4.1196,1.48654"
+         id="path873-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="338.7504,-709.1753 348.5201,-713.2744 348.944,-706.2872 "
+         id="polygon875-0"
+         transform="matrix(0.35277778,0,0,0.35277778,1010.1202,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1137.2966"
+         y="254.52788"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text877-2"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="436.5,-626 351.5,-626 351.5,-590 436.5,-590 "
+         id="polygon913-6"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1120.3929"
+         y="292.20453"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text915-2"
+         style="stroke-width:0.352778">WAIT_INST</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1120.8628,296.86121 c 0,0 21.2843,0 21.2843,0 1.9991,0 3.9982,-1.99908 3.9982,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.9991,-3.99813 -3.9982,-3.99813 0,0 -21.2843,0 -21.2843,0 -1.999,0 -3.9981,1.99908 -3.9981,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.9991,3.99813 3.9981,3.99813"
+         id="path917-5" />
+      <text
+         text-anchor="start"
+         x="1131.1522"
+         y="268.99176"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text926-4"
+         style="stroke-width:0.352778">not (recv_data == 32'd1)   </text>
+      <text
+         text-anchor="start"
+         x="1131.1522"
+         y="273.2251"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text928-4"
+         style="stroke-width:0.352778">not (recv_data == 32'd2)   </text>
+      <text
+         text-anchor="start"
+         x="1131.1522"
+         y="277.45844"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text930-9"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="322.5,-814 219.5,-814 219.5,-778 322.5,-778 "
+         id="polygon935-9"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1080.3743"
+         y="225.88232"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text937-36"
+         style="stroke-width:0.352778">SEND_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1080.7275,230.53899 c 0,0 27.6343,0 27.6343,0 1.9991,0 3.9982,-1.99909 3.9982,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99814 -3.9982,-3.99814 0,0 -27.6343,0 -27.6343,0 -1.999,0 -3.9981,1.99909 -3.9981,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9981,3.99814"
+         id="path939-05" />
+      <text
+         text-anchor="start"
+         x="1084.7385"
+         y="240.51996"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text948-0"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1080.9022,218.34456 c 0.2485,-4.44602 1.367,-7.75469 3.3556,-7.75469 1.3981,0 2.3662,1.63576 2.9042,4.15248"
+         id="path953-2"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="332.2774,-795.3252 332.7191,-788.3392 322.5182,-791.2012 "
+         id="polygon955-94"
+         transform="matrix(0,-0.35277778,0.35277778,0,1366.5079,332.12182)" />
+      <text
+         text-anchor="start"
+         x="1071.2045"
+         y="208.48314"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text957-3"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1146.6034,289.1509 c 4.3226,0.0672 7.6557,0.63821 7.6557,1.71309 0,0.75576 -1.6478,1.26245 -4.1288,1.52001"
+         id="path1007-4"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="446.5923,-607.1855 446.9749,-600.1959 436.7986,-603.144 "
+         id="polygon1009-2"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1154.2592"
+         y="291.92233"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1011-2"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="433.5,-544 354.5,-544 354.5,-508 433.5,-508 "
+         id="polygon1016-6"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <text
+         text-anchor="start"
+         x="1121.453"
+         y="321.13232"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1018-4"
+         style="stroke-width:0.352778">RUN_CPU</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1121.9212,325.78899 c 0,0 19.1676,0 19.1676,0 1.999,0 3.9981,-1.99909 3.9981,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99813 -3.9981,-3.99813 0,0 -19.1676,0 -19.1676,0 -1.9991,0 -3.9982,1.99908 -3.9982,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9982,3.99814"
+         id="path1020-1" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1131.505,297.28402 c 0,3.67026 0,8.35377 0,12.49704"
+         id="path1025-2"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-8"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1124.8958,259.31751 c 0,6.48035 0,14.74973 0,22.06523"
+         id="path1025-9-8"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027-2-92"
+         transform="matrix(0.35277778,0,0,0.35277778,985.85761,476.70888)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1106.2814,230.89177 c 0,3.96979 0,9.03552 0,13.51691"
+         id="path1025-9-0-3-3"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-2-2-7-8"
+         transform="matrix(0.35277778,0,0,0.35277778,967.24313,439.73483)" />
+      <text
+         text-anchor="start"
+         x="1131.505"
+         y="306.3862"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1029-3"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="432.5,-462 355.5,-462 355.5,-426 432.5,-426 "
+         id="polygon1034-3"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <g
+         id="g9375-3"
+         transform="translate(952.69705,213.19414)">
+        <text
+           text-anchor="start"
+           x="169.22372"
+           y="136.86595"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1036-8"
+           style="stroke-width:0.352778">CPU_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 169.57689,141.52263 c 0,0 18.46206,0 18.46206,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99814 -3.99813,-3.99814 0,0 -18.46206,0 -18.46206,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1038-0" />
+      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1131.505,326.21179 c 0,3.67027 0,8.35378 0,12.49705"
+         id="path1043-4"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-472.1476 397.5001,-472.1476 394,-462.1476 "
+         id="polygon1045-7"
+         transform="matrix(0.35277778,0,0,0.35277778,992.51052,505.35288)" />
+      <g
+         id="g3246-5"
+         transform="translate(1049.5538,68.55525)">
+        <polygon
+           fill="#ffffff"
+           fill-opacity="0.00392199"
+           stroke="transparent"
+           stroke-width="2"
+           points="423,-52 423,-16 547,-16 547,-52 "
+           id="polygon1070-2"
+           transform="matrix(0.35277778,0,0,0.35277778,39.813472,292.15874)" />
+        <text
+           text-anchor="start"
+           x="192.91754"
+           y="281.50485"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1072-6"
+           style="stroke-width:0.352778">RECV_DATA_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 193.38939,286.16152 c 0,0 35.04261,0 35.04261,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -35.04261,0 -35.04261,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1074-5" />
+      </g>
+      <text
+         text-anchor="start"
+         x="1160.9817"
+         y="345.1167"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1092-2-4"
+         style="stroke-width:0.352778">not (read_enable || write_enable)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1260.8143,342.77218 c 0,-34.78627 0,-79.1758 0,-118.44508"
+         id="path1043-3-3-2-8-3"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1260.991,224.49827 c -42.6548,0.003 -98.1672,0.007 -145.0142,0.01"
+         id="path1180-70-0-9-5"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="359.4216,-143.6095 364.1885,-134.1476 354.5615,-138.5716 "
+         id="polygon1182-9-6-7-7"
+         transform="matrix(-0.25401613,-0.2448019,-0.2448019,0.25401613,1172.3529,347.73975)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1144.8109,348.6474 c 26.7085,0.003 61.4678,0.007 90.8013,0.01"
+         id="path1180-7-6-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="359.4216,-143.6095 364.1885,-134.1476 354.5615,-138.5716 "
+         id="polygon1182-5-2-9"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,1178.9361,471.88887)" />
+    </g>
+    <g
+       id="g27840"
+       inkscape:export-filename="/home/vicente/Proyectosqt/Risc-V-Testing-app/docs/img/MemInst.png"
+       inkscape:export-xdpi="97"
+       inkscape:export-ydpi="97">
+      <polygon
+         fill="#ffffff"
+         stroke="transparent"
+         points="-4,4 -4,-1028 582,-1028 582,4 "
+         id="polygon826-2"
+         transform="matrix(0.54018284,0,0,0.21573976,1002.3963,772.19571)"
+         style="stroke-width:1.03339" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="243.5,-696 338.5,-696 338.5,-732 243.5,-732 "
+         id="polygon864-5"
+         transform="matrix(0.35277778,0,0,0.35277778,1035.8129,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1125.7125"
+         y="609.8371"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text866-6"
+         style="stroke-width:0.352778">CPU_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1126.0652,614.49377 c 0,0 24.8121,0 24.8121,0 1.999,0 3.9981,-1.99909 3.9981,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99814 -3.9981,-3.99814 0,0 -24.8121,0 -24.8121,0 -1.999,0 -3.9981,1.99909 -3.9981,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9981,3.99814"
+         id="path868-7" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1155.3165,606.7945 c 4.3743,0.1046 7.6728,0.67197 7.6728,1.70204 0,0.72429 -1.6307,1.21981 -4.1195,1.48654"
+         id="path873-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="338.7504,-709.1753 348.5201,-713.2744 348.944,-706.2872 "
+         id="polygon875-40"
+         transform="matrix(0.35277778,0,0,0.35277778,1035.8129,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1162.9893"
+         y="609.55487"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text877-6"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="436.5,-626 351.5,-626 351.5,-590 436.5,-590 "
+         id="polygon913-60"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1146.0857"
+         y="647.23157"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text915-6"
+         style="stroke-width:0.352778">WAIT_INST</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1146.5556,651.88821 c 0,0 21.2843,0 21.2843,0 1.999,0 3.9981,-1.99908 3.9981,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.9991,-3.99813 -3.9981,-3.99813 0,0 -21.2843,0 -21.2843,0 -1.9991,0 -3.9982,1.99908 -3.9982,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.9991,3.99813 3.9982,3.99813"
+         id="path917-6" />
+      <text
+         text-anchor="start"
+         x="1156.845"
+         y="624.01874"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text926-46"
+         style="stroke-width:0.352778">not (recv_data == 32'd1)   </text>
+      <text
+         text-anchor="start"
+         x="1156.845"
+         y="628.25208"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text928-2"
+         style="stroke-width:0.352778">not (recv_data == 32'd2)   </text>
+      <text
+         text-anchor="start"
+         x="1156.845"
+         y="632.48541"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text930-8"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="322.5,-814 219.5,-814 219.5,-778 322.5,-778 "
+         id="polygon935-96"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1106.067"
+         y="580.9093"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text937-0"
+         style="stroke-width:0.352778">SEND_READY</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1106.4203,585.56599 c 0,0 27.6343,0 27.6343,0 1.999,0 3.9981,-1.99909 3.9981,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99814 -3.9981,-3.99814 0,0 -27.6343,0 -27.6343,0 -1.9991,0 -3.9982,1.99909 -3.9982,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9982,3.99814"
+         id="path939-7" />
+      <text
+         text-anchor="start"
+         x="1110.4313"
+         y="595.54694"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text948-01"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1106.5949,573.37156 c 0.2485,-4.44602 1.367,-7.75469 3.3556,-7.75469 1.3982,0 2.3662,1.63576 2.9042,4.15248"
+         id="path953-01"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="332.2774,-795.3252 332.7191,-788.3392 322.5182,-791.2012 "
+         id="polygon955-3"
+         transform="matrix(0,-0.35277778,0.35277778,0,1392.2007,687.14882)" />
+      <text
+         text-anchor="start"
+         x="1096.8972"
+         y="563.51013"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text957-7"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1172.2961,644.1779 c 4.3227,0.0672 7.6558,0.63821 7.6558,1.71309 0,0.75576 -1.6479,1.26245 -4.1289,1.52001"
+         id="path1007-9"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="446.5923,-607.1855 446.9749,-600.1959 436.7986,-603.144 "
+         id="polygon1009-9"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1179.9519"
+         y="646.94934"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1011-4"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="433.5,-544 354.5,-544 354.5,-508 433.5,-508 "
+         id="polygon1016-5"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1147.1458"
+         y="676.1593"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1018-1"
+         style="stroke-width:0.352778">RUN_CPU</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1147.6139,680.81599 c 0,0 19.1676,0 19.1676,0 1.9991,0 3.9982,-1.99909 3.9982,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99813 -3.9982,-3.99813 0,0 -19.1676,0 -19.1676,0 -1.999,0 -3.9981,1.99908 -3.9981,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9981,3.99814"
+         id="path1020-0" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1157.1977,652.31102 c 0,3.67026 0,8.35377 0,12.49704"
+         id="path1025-3"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-7"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1150.5886,614.34451 c 0,6.48035 0,14.74973 0,22.06523"
+         id="path1025-9-88"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-554.1476 394,-544.1476 390.5001,-554.1476 "
+         id="polygon1027-2-6"
+         transform="matrix(0.35277778,0,0,0.35277778,1011.5504,831.73588)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1131.9741,585.91877 c 0,3.96979 0,9.03552 0,13.51691"
+         id="path1025-9-0-3-09"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-554.1476 397.5001,-554.1476 394,-544.1476 "
+         id="polygon1027-2-2-7-7"
+         transform="matrix(0.35277778,0,0,0.35277778,992.93587,794.76183)" />
+      <text
+         text-anchor="start"
+         x="1157.1978"
+         y="661.41321"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1029-5"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="432.5,-462 355.5,-462 355.5,-426 432.5,-426 "
+         id="polygon1034-9"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <g
+         id="g9375-7"
+         transform="translate(978.38979,568.22114)">
+        <text
+           text-anchor="start"
+           x="169.22372"
+           y="136.86595"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1036-85"
+           style="stroke-width:0.352778">CPU_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 169.57689,141.52263 c 0,0 18.46206,0 18.46206,0 1.99905,0 3.99813,-1.99909 3.99813,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99908,-3.99814 -3.99813,-3.99814 0,0 -18.46206,0 -18.46206,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1038-3" />
+      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1157.1977,681.23879 c 0,3.67027 0,8.35378 0,12.49705"
+         id="path1043-38"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-472.1476 397.5001,-472.1476 394,-462.1476 "
+         id="polygon1045-3"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1207.5015,737.99199 c 0,3.67027 0,8.35378 0,12.49705"
+         id="path1043-3-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-472.1476 394,-462.1476 390.5001,-472.1476 "
+         id="polygon1045-5-9"
+         transform="matrix(0.35277778,0,0,0.35277778,1068.507,917.13308)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1036.4789,727.12522 c 0,-6.5202 0,-14.8404 0,-22.20088"
+         id="path1043-3-3-3"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1036.4959,689.03408 c 0,-33.09932 0,-75.33621 0,-112.70114"
+         id="path1043-3-3-2-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="390.5001,-472.1476 397.5001,-472.1476 394,-462.1476 "
+         id="polygon1045-5-6-7"
+         transform="matrix(0.35277778,0,0,-0.35277778,897.48445,538.2803)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1286.219,754.60855 c 0,-12.12904 0,-27.60651 0,-41.29866"
+         id="path1043-3-9-4"
+         style="stroke-width:0.352779" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="397.5001,-472.1476 394,-462.1476 390.5001,-472.1476 "
+         id="polygon1045-5-1-1"
+         transform="matrix(0.35277778,0,0,-0.35277778,1147.2245,546.66586)" />
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="337,-380 217,-380 217,-344 337,-344 "
+         id="polygon1052-9"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1098.6364"
+         y="734.01489"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1054-8"
+         style="stroke-width:0.352778">SEND_ADDRESS</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1099.1069,738.67155 c 0,0 33.6316,0 33.6316,0 1.999,0 3.9981,-1.99909 3.9981,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.9991,-3.99814 -3.9981,-3.99814 0,0 -33.6316,0 -33.6316,0 -1.999,0 -3.9981,1.99909 -3.9981,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.9991,3.99814 3.9981,3.99814"
+         id="path1056-8" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1148.0374,710.16657 c -5.878,4.11967 -13.5776,9.51594 -19.9641,13.99194"
+         id="path1061-5"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="309.0738,-388.7531 313.0913,-383.0208 302.8935,-380.1476 "
+         id="polygon1063-8"
+         transform="matrix(0.35277778,0,0,0.35277778,1018.2033,860.37988)" />
+      <text
+         text-anchor="start"
+         x="1139.2061"
+         y="719.26874"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1065-4"
+         style="stroke-width:0.352778">write_enable || read_enable   </text>
+      <g
+         id="g3246-3"
+         transform="translate(1075.2466,423.58225)">
+        <polygon
+           fill="#ffffff"
+           fill-opacity="0.00392199"
+           stroke="transparent"
+           stroke-width="2"
+           points="423,-52 423,-16 547,-16 547,-52 "
+           id="polygon1070-7"
+           transform="matrix(0.35277778,0,0,0.35277778,39.813472,292.15874)" />
+        <text
+           text-anchor="start"
+           x="192.91754"
+           y="281.50485"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1072-1"
+           style="stroke-width:0.352778">RECV_DATA_CLK</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 193.38939,286.16152 c 0,0 35.04261,0 35.04261,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -35.04261,0 -35.04261,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1074-3" />
+      </g>
+      <g
+         id="g3089-80"
+         transform="translate(971.38499,568.63611)">
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 127.53219,157.9678 c 0.42922,-4.49259 1.83795,-7.73692 4.22631,-7.73692 1.67932,0 2.87438,1.60394 3.58507,4.11798"
+           id="path1088-9"
+           style="stroke-width:0.352777" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="347.288,-354.487 337.0686,-357.2824 346.8007,-361.4701 "
+           id="polygon1090-7"
+           transform="matrix(0,-0.35277778,0.35277778,0,261.63738,276.87811)" />
+      </g>
+      <text
+         text-anchor="start"
+         x="1070.8091"
+         y="711.16626"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1092-9"
+         style="stroke-width:0.352778">not (send_ready &amp;&amp; write_enable)   </text>
+      <text
+         text-anchor="start"
+         x="1070.8091"
+         y="715.3996"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1094-2"
+         style="stroke-width:0.352778">not (send_ready &amp;&amp; read_enable)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="291.5,-298 291.5,-262 412.5,-262 412.5,-298 "
+         id="polygon1099-4"
+         transform="matrix(0.35277778,0,0,0.35277778,1088.0865,830.78382)" />
+      <g
+         id="g6197-3"
+         transform="translate(960.86948,568.22114)">
+        <text
+           text-anchor="start"
+           x="234.04788"
+           y="165.12547"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1101-7"
+           style="stroke-width:0.352778">SEND_SIZELOAD</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 234.40259,169.78212 c 0,0 33.98428,0 33.98428,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -33.98428,0 -33.98428,0 -1.99905,0 -3.99814,1.99909 -3.99814,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99813 3.99814,3.99813"
+           id="path1103-1" />
+      </g>
+      <text
+         text-anchor="start"
+         x="1138.5099"
+         y="739.69238"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1112-2"
+         style="stroke-width:0.352778">send_ready &amp;&amp; read_enable   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="168,-262 168,-298 40,-298 40,-262 "
+         id="polygon1117-2"
+         transform="matrix(0.35277778,0,0,0.35277778,999.64801,831.9281)" />
+      <g
+         id="g15188-0"
+         transform="translate(902.42035,539.76936)">
+        <text
+           text-anchor="start"
+           x="115.10425"
+           y="194.72151"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1119-21"
+           style="stroke-width:0.352778">SEND_MEMWRITE</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 115.68968,199.37818 c 0,0 36.45373,0 36.45373,0 1.99905,0 3.99814,-1.99908 3.99814,-3.99813 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99814 -3.99814,-3.99814 0,0 -36.45373,0 -36.45373,0 -1.99905,0 -3.99813,1.99909 -3.99813,3.99814 0,0 0,3.99817 0,3.99817 0,1.99905 1.99908,3.99813 3.99813,3.99813"
+           id="path1121-7" />
+      </g>
+      <text
+         text-anchor="start"
+         x="1061.4802"
+         y="744.31262"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1130-5"
+         style="stroke-width:0.352778">send_ready &amp;&amp; write_enable   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1233.7131,730.34672 c 4.4531,0.17466 7.6553,0.72778 7.6553,1.65932 0,0.655 -1.5831,1.12289 -4.0711,1.4037"
+         id="path1135-1"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="412.7999,-275.2964 422.5256,-279.499 423.0236,-272.5167 "
+         id="polygon1137-7"
+         transform="matrix(0.35277778,0,0,0.35277778,1088.0865,830.78382)" />
+      <text
+         text-anchor="start"
+         x="1241.3684"
+         y="733.06439"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1139-4"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="363,-216 233,-216 233,-180 363,-180 "
+         id="polygon1144-1"
+         transform="matrix(0.35277778,0,0,0.35277778,1105.6068,830.78382)" />
+      <text
+         text-anchor="start"
+         x="1191.5669"
+         y="762.27441"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1146-7"
+         style="stroke-width:0.352778">WAIT_RECV_DATA</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1192.1549,766.93104 c 0,0 37.1593,0 37.1593,0 1.999,0 3.9981,-1.99908 3.9981,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.9991,-3.99813 -3.9981,-3.99813 0,0 -37.1593,0 -37.1593,0 -1.9991,0 -3.9982,1.99908 -3.9982,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.9991,3.99813 3.9982,3.99813"
+         id="path1148-1" />
+      <text
+         text-anchor="start"
+         x="1209.6761"
+         y="747.52826"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1157-1"
+         style="stroke-width:0.352778">send_ready   </text>
+      <g
+         id="g17337-17"
+         transform="translate(921.3374,566.85338)">
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 266.69008,196.6284 c -4.48493,-0.33762 -7.66981,-1.30657 -7.66981,-2.90704 0,-1.12528 1.57456,-1.93847 4.06848,-2.43943"
+           id="path1162-0"
+           style="stroke-width:0.352779" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="373.4882,-190.5834 363.2588,-193.3419 372.9757,-197.5646 "
+           id="polygon1164-4"
+           transform="matrix(-0.35277778,0,0,-0.35277778,394.83972,122.81087)" />
+      </g>
+      <text
+         text-anchor="start"
+         x="1152.7264"
+         y="761.89832"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1166-0"
+         style="stroke-width:0.352778">not (recv_ready)   </text>
+      <g
+         id="g3251-8"
+         transform="translate(1111.8473,509.68518)">
+        <polygon
+           fill="#ffffff"
+           fill-opacity="0.00392199"
+           stroke="transparent"
+           stroke-width="2"
+           points="336,-98 430,-98 430,-134 336,-134 "
+           id="polygon1171-51"
+           transform="matrix(0.35277778,0,0,0.35277778,39.813472,292.15874)" />
+        <text
+           text-anchor="start"
+           x="162.26341"
+           y="252.57707"
+           font-family="Helvetica, sans-Serif"
+           font-size="4.23333px"
+           fill="#000000"
+           id="text1173-6"
+           style="stroke-width:0.352778">RECV_DATA</text>
+        <path
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.705556"
+           d="m 162.69772,257.23374 c 0,0 24.45928,0 24.45928,0 1.99905,0 3.99814,-1.99909 3.99814,-3.99814 0,0 0,-3.99817 0,-3.99817 0,-1.99905 -1.99909,-3.99813 -3.99814,-3.99813 0,0 -24.45928,0 -24.45928,0 -1.99905,0 -3.99814,1.99908 -3.99814,3.99813 0,0 0,3.99817 0,3.99817 0,1.99905 1.99909,3.99814 3.99814,3.99814"
+           id="path1175-6" />
+      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1233.5855,761.39862 c 9.7934,0.003 22.5389,0.007 33.2948,0.01"
+         id="path1180-21"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="354.5615,-138.5716 359.4216,-143.6095 364.1885,-134.1476 "
+         id="polygon1182-96"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,1210.417,884.64009)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1095.0384,732.99238 c -9.7934,0.003 -22.5388,0.007 -33.2947,0.01"
+         id="path1180-70-48"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-9-0"
+         transform="matrix(-0.25401613,-0.2448019,-0.2448019,0.25401613,1118.207,856.23385)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1036.4309,576.50411 c 18.3713,0.003 42.2803,0.007 62.4572,0.01"
+         id="path1180-70-0-8"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-9-6-0"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,1042.5121,699.74559)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1286.5071,697.79918 c 0,-34.78627 0,-79.1758 0,-118.44508"
+         id="path1043-3-3-2-8-2"
+         style="stroke-width:0.352778" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1286.6837,579.52527 c -42.6548,0.003 -98.1671,0.007 -145.0141,0.01"
+         id="path1180-70-0-9-2"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="359.4216,-143.6095 364.1885,-134.1476 354.5615,-138.5716 "
+         id="polygon1182-9-6-7-9"
+         transform="matrix(-0.25401613,-0.2448019,-0.2448019,0.25401613,1198.0456,702.76675)" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1136.4839,733.00864 c 14.9973,0.003 34.5153,0.007 50.9867,0.01"
+         id="path1180-7-5"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="364.1885,-134.1476 354.5615,-138.5716 359.4216,-143.6095 "
+         id="polygon1182-5-6"
+         transform="matrix(0.25401613,-0.2448019,0.2448019,0.25401613,1131.2593,856.25011)" />
+      <text
+         text-anchor="start"
+         x="1242.5728"
+         y="766.42365"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1184-3"
+         style="stroke-width:0.352778">recv_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1030.8344,739.5492 c 0.3783,4.50283 1.4987,7.71374 3.3612,7.71374 1.3095,0 2.2522,-1.58743 2.828,-4.09519"
+         id="path1207-7"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="177.856,-279.538 178.3607,-272.5562 168.1343,-275.3261 "
+         id="polygon1209-9"
+         transform="matrix(0,0.35277778,0.35277778,0,1134.4141,680.23516)" />
+      <text
+         text-anchor="start"
+         x="1020.0957"
+         y="752.54633"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1211-7"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+      <polygon
+         fill="#ffffff"
+         fill-opacity="0.00392199"
+         stroke="transparent"
+         stroke-width="2"
+         points="16,-180 110,-180 110,-216 16,-216 "
+         id="polygon1216-4"
+         transform="matrix(0.35277778,0,0,0.35277778,1013.4482,764.82506)" />
+      <text
+         text-anchor="start"
+         x="1022.973"
+         y="696.31561"
+         font-family="Helvetica, sans-Serif"
+         font-size="4.23333px"
+         fill="#000000"
+         id="text1218-9"
+         style="stroke-width:0.352778">SEND_DATA</text>
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="0.705556"
+         d="m 1023.4436,700.97228 c 0,0 24.4593,0 24.4593,0 1.999,0 3.9981,-1.99908 3.9981,-3.99813 0,0 0,-3.99818 0,-3.99818 0,-1.99905 -1.9991,-3.99813 -3.9981,-3.99813 0,0 -24.4593,0 -24.4593,0 -1.999,0 -3.9981,1.99908 -3.9981,3.99813 0,0 0,3.99818 0,3.99818 0,1.99905 1.9991,3.99813 3.9981,3.99813"
+         id="path1220-1" />
+      <text
+         text-anchor="start"
+         x="1012.8862"
+         y="716.77124"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1238-7"
+         style="stroke-width:0.352778">send_ready   </text>
+      <text
+         text-anchor="start"
+         x="1015.1404"
+         y="674.58032"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1238-6-0"
+         style="stroke-width:0.352778">send_ready   </text>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1052.2838,693.27037 c 4.3992,0.0974 7.7311,0.66565 7.7311,1.70469 0,0.73057 -1.6472,1.22837 -4.1545,1.49345"
+         id="path1243-6"
+         style="stroke-width:0.352778" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="110.0851,-193.1678 119.8613,-197.2514 120.2741,-190.2636 "
+         id="polygon1245-0"
+         transform="matrix(0.35277778,0,0,0.35277778,1013.4482,764.82506)" />
+      <text
+         text-anchor="start"
+         x="1061.295"
+         y="696.03339"
+         font-family="Helvetica, sans-Serif"
+         font-size="3.52778px"
+         fill="#000000"
+         id="text1247-8"
+         style="stroke-width:0.352778">not (send_ready)   </text>
+    </g>
+  </g>
+</svg>
